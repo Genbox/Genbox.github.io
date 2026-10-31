@@ -1,0 +1,79 @@
+/* 404 */
+.not-found {
+    padding: 56px 0 96px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 32px 48px;
+}
+
+.not-found-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.not-found-art {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    aspect-ratio: 1;
+    justify-self: center;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.not-found > .suggestions {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 800px) {
+    .not-found {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .not-found-art {
+        max-width: 240px;
+    }
+}
+
+.terminal {
+    max-width: 560px;
+    border-radius: 12px;
+    background: var(--code-bg);
+    border: 1px solid var(--line-2);
+    padding: 18px 20px;
+    font: 14px/1.8 var(--mono);
+    color: var(--sub);
+    overflow-wrap: anywhere;
+}
+
+.terminal p {
+    margin: 0;
+}
+
+.terminal .host {
+    color: var(--text);
+}
+
+.status-404 {
+    color: #f78c6c;
+}
+
+.suggestions {
+    max-width: 760px;
+    margin-top: 16px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line-2);
+}
+
+.suggestions ol {
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.suggestions .result {
+    gap: 4px;
+    padding: 14px 0;
+}

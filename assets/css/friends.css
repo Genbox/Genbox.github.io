@@ -1,0 +1,151 @@
+/* Friends list controls */
+.friends-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+}
+
+.friends-controls[hidden],
+.friends-group-note[hidden] {
+    display: none;
+}
+
+.friends-controls label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--sub);
+    font-size: 14px;
+}
+
+.friends-controls select {
+    max-width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+}
+
+.friends-group-note {
+    margin: 0;
+    color: var(--muted);
+}
+
+.friends-subject + .friends-subject {
+    margin-top: 32px;
+}
+
+.friends-subject h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+/* Friends */
+.friends-header .lead {
+    max-width: none;
+}
+
+.friends-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 48px;
+}
+
+.friends-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+}
+
+.friends-grid-featured {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+}
+
+.friend-card {
+    min-width: 0;
+    gap: 10px;
+    padding: 22px;
+    overflow-wrap: anywhere;
+}
+
+.friend-card h3,
+.friend-card p {
+    margin: 0;
+}
+
+.friend-card .card-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 20px;
+}
+
+.friend-arrow {
+    flex-shrink: 0;
+    color: var(--accent);
+}
+
+.friend-domain {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.friend-card .tags {
+    margin-top: auto;
+    padding-top: 8px;
+}
+
+.friends-grid-featured .friend-card {
+    padding: 32px;
+    gap: 16px;
+    border-top: 2px solid var(--accent);
+}
+
+.friends-grid-featured .card-title {
+    font-size: 28px;
+}
+
+.friends-grid-featured .card-text {
+    font-size: 17px;
+}
+
+.friends-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.friend-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.friend-url {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.friend-row > a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 12px;
+    min-width: 0;
+    color: var(--heading);
+    overflow-wrap: anywhere;
+}
+
+.friend-row > a:hover {
+    color: var(--accent);
+}
+
+.friends-empty {
+    margin: 0;
+    color: var(--muted);
+}

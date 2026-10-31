@@ -1,0 +1,26 @@
+@page "/search/"
+@{
+    ViewData["Title"] = "Search";
+    ViewData["Description"] = "Search all articles on Whatever crossed my mind.";
+}
+<header class="page-header">
+    <p class="label label-accent">// search all @Site.Posts.Count articles</p>
+    <h1>Search</h1>
+    <form action="/search/" method="get" role="search">
+        <label class="visually-hidden" for="q">Search articles</label>
+        <div class="search-field">
+            <svg aria-hidden="true" fill="none" height="18" stroke="#8F97A2" stroke-linecap="round" stroke-width="2" viewBox="0 0 24 24" width="18">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-3.5-3.5"></path>
+            </svg>
+            <input autocomplete="off" id="q" name="q" placeholder="Search articles" type="search">
+            <kbd aria-hidden="true" title="Press / to search">/</kbd>
+        </div>
+    </form>
+</header>
+<div class="results" data-index="/search.json" id="search-results">
+    <p aria-live="polite" class="mono results-status" role="status">Search titles, descriptions and article text.</p>
+    <ol></ol>
+    <button class="button" hidden type="button">Show more results</button>
+    <noscript><p class="lead">Search needs JavaScript. Browse the <a href="/">article list</a> or the <a href="/topics/">topics</a> instead.</p></noscript>
+</div>

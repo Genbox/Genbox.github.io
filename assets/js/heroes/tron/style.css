@@ -1,0 +1,5 @@
+@media print {
+    .tron-sprite {
+        display: none;
+    }
+}

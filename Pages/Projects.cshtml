@@ -1,0 +1,50 @@
+@page "/projects/"
+@{
+    ViewData["Title"] = "Projects";
+    ViewData["Description"] = "Open source libraries and tools by Ian Qvist, mostly in C# and .NET.";
+    ViewData["Styles"] = new[] { "projects.css" };
+    Repository? top = Site.Repositories.MaxBy(repo => repo.StargazerCount);
+}
+<header class="page-header projects-header">
+    <div>
+        <p class="label label-accent">// open source</p>
+        <h1>Projects</h1>
+        <p class="lead">Libraries and tools I build and maintain, mostly in C# and .NET.</p>
+    </div>
+    <a class="button" href="https://github.com/Genbox?tab=repositories" rel="noopener" target="_blank">All repositories on GitHub ↗</a>
+</header>
+@if (top is not null)
+{
+    <a class="card feature" href="@top.Url" rel="noopener" target="_blank">
+        <span><span class="label label-accent">Most starred</span><span class="card-title">@top.Name</span><span class="card-text">@top.Description</span></span>
+        <span class="card-meta"><span>@top.Language</span><span class="stars">★ @top.StargazerCount</span></span>
+    </a>
+}
+@if (Site.PinnedRepositories.Count > 0)
+{
+    <section aria-labelledby="pinned-title" class="project-group">
+        <div class="section-heading"><h2 id="pinned-title">Pinned</h2><span class="mono">from my GitHub profile</span></div>
+        <div class="card-grid pinned">
+            @foreach (Repository repo in Site.PinnedRepositories)
+            {
+                <partial name="_ProjectCard" model="repo"/>
+            }
+        </div>
+    </section>
+}
+@foreach (ProjectGroup group in Site.ProjectGroups)
+{
+    <section aria-labelledby="group-@SiteCatalog.Slug(group.Name)" class="project-group">
+        <div class="section-heading">
+            <h2 id="group-@SiteCatalog.Slug(group.Name)">@group.Name</h2>
+            <span class="mono">@group.Repos.Count @(group.Repos.Count == 1 ? "project" : "projects")</span>
+        </div>
+        <div class="card-grid project-grid">
+            @foreach (Repository repo in group.Repos)
+            {
+                <partial name="_ProjectCard" model="repo"/>
+            }
+        </div>
+    </section>
+}
+<p class="mono footnote">Star counts from GitHub, updated @(DateTimeOffset.UtcNow.ToString("MMMM d, yyyy", CultureInfo.InvariantCulture)).</p>

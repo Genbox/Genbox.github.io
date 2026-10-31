@@ -1,0 +1,40 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = false
+trim_trailing_whitespace = true
+
+[*.{js,mjs,css}]
+max_line_length = 100000
+
+[*.{yml,json,rb}]
+indent_size = 2
+
+[*.{html,htm,cshtml,razor}]
+max_line_length = 100000
+resharper_html_attribute_style = on_single_line
+
+[*.{md,markdown}]
+max_line_length = 100000
+
+# Articles are prose; Rider's formatter rewraps paragraphs and alters text such as "sqrt(x)".
+# wwwroot is generated output, rewritten on every build.
+[{_posts,_drafts,wwwroot}/**]
+ij_formatter_enabled = false
+
+# Explicit numeric limits keep Rider cleanup from chopping long lines and argument lists.
+[*.{cs,cshtml,razor}]
+max_line_length = 100000
+resharper_csharp_wrap_arguments_style = wrap_if_long
+resharper_csharp_wrap_parameters_style = wrap_if_long
+resharper_csharp_wrap_primary_constructor_parameters_style = wrap_if_long
+resharper_csharp_max_invocation_arguments_on_line = 1000
+resharper_csharp_max_formal_parameters_on_line = 1000
+resharper_csharp_max_primary_constructor_parameters_on_line = 1000
+resharper_csharp_keep_existing_invocation_parens_arrangement = false
+resharper_csharp_keep_existing_declaration_parens_arrangement = false
+resharper_csharp_keep_existing_primary_constructor_declaration_parens_arrangement = false

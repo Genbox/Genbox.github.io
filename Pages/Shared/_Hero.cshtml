@@ -1,0 +1,95 @@
+<section class="hero">
+    @foreach (string hero in new[] { "joshua", "pingu", "matrix", "hal", "c64", "portal", "terminator", "hyperspace", "bsod", "clippy", "eggdog", "dontpanic", "sudo", "warcraft", "wow", "fullthrottle", "rayman", "diablo", "quake", "halflife", "gta", "minecraft", "skyrim", "witcher", "cyberpunk" })
+    {
+        <canvas class="@(hero)-sprite hero-art" width="160" height="192" aria-hidden="true" hidden></canvas>
+    }
+    <div class="spock-sprite hero-art" aria-hidden="true" hidden>
+        <img data-src="@Assets.Url("/assets/images/heroes/spock.webp")" width="160" height="192" alt="">
+        <canvas class="spock-transporter" width="80" height="96"></canvas>
+    </div>
+    <canvas class="tron-sprite hero-art" width="160" height="192" data-sprite="@Assets.Url("/assets/images/heroes/tron-reference.webp")" aria-hidden="true" hidden></canvas>
+    <div class="doomguy hero-art" aria-hidden="true" hidden>
+        <canvas class="doom-particles" width="80" height="96"></canvas>
+    </div>
+    <div class="christmas-tree hero-art" aria-hidden="true" hidden>
+        <picture>
+            <source media="(prefers-reduced-motion: reduce)" data-srcset="@Assets.Url("/assets/images/themes/christmas-tree.svg")">
+            <img data-src="@Assets.Url("/assets/images/themes/christmas-tree-sparkle.svg")" width="160" height="192" alt="">
+        </picture>
+    </div>
+    <div class="new-year hero-art" hidden aria-hidden="true">
+        <picture>
+            <source media="(prefers-reduced-motion: reduce)" data-srcset="@Assets.Url("/assets/images/themes/new-year-rockets-static.svg")">
+            <img data-src="@Assets.Url("/assets/images/themes/new-year-rockets.svg")" width="160" height="140" alt="">
+        </picture>
+        <span class="new-year-number"></span>
+    </div>
+    <p class="label label-accent">// performance · security · data structures · algorithms</p>
+    <h1 data-text="Whatever crossed my mind" id="typed-heading"><span>Whatever crossed my mind</span><span aria-hidden="true" class="cursor cursor-done"></span><span aria-hidden="true" class="untyped"></span></h1>
+    <script>
+        (function () {
+            const h = document.getElementById("typed-heading");
+            const navigation = performance.getEntriesByType("navigation")[0];
+            const replay = navigation && navigation.type === "reload";
+            let firstVisit = true;
+            try {
+                firstVisit = sessionStorage.getItem("frontpage-title-seen") !== "true";
+                sessionStorage.setItem("frontpage-title-seen", "true");
+            } catch (_) {
+            }
+            const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const animate = !reducedMotion && (firstVisit || replay);
+            const text = h.getAttribute("data-text");
+            const typed = h.children[0];
+            const cursor = h.children[1];
+            const rest = h.children[2];
+            let n = 0;
+            let timer;
+            h.setAttribute("aria-label", text);
+            typed.setAttribute("aria-hidden", "true");
+            h.dataset.titleAnimation = animate ? "play" : "skip";
+
+            function finish() {
+                clearTimeout(timer);
+                if (n < text.length) {
+                    typed.textContent = text;
+                }
+                n = text.length;
+                rest.textContent = "";
+                cursor.classList.add("cursor-done");
+                h.classList.add("title-static");
+                h.dataset.titleAnimation = "skip";
+            }
+
+            // Back/Forward can restore the live document rather than execute this script again.
+            window.addEventListener("pageshow", function (event) {
+                if (!event.persisted) {
+                    return;
+                }
+                finish();
+                h.dispatchEvent(new Event("headingstatic"));
+            });
+            if (!animate) {
+                finish();
+                return;
+            }
+            cursor.classList.remove("cursor-done");
+            typed.textContent = "";
+            rest.textContent = text;
+
+            function step() {
+                n++;
+                typed.textContent = text.slice(0, n);
+                rest.textContent = text.slice(n);
+                if (n < text.length) {
+                    timer = setTimeout(step, 55 + Math.random() * 60);
+                } else {
+                    cursor.classList.add("cursor-done");
+                }
+            }
+
+            timer = setTimeout(step, 450);
+        })();
+    </script>
+    <p class="lead">Notes, experiments and ideas from a life spent building software.</p>
+</section>

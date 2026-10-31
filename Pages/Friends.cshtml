@@ -1,0 +1,68 @@
+@page "/friends/"
+@{
+    ViewData["Title"] = "Friends";
+    ViewData["Description"] = "Friends and blogs I read, covering technology, security, performance, and programming.";
+    ViewData["Styles"] = new[] { "friends.css" };
+}
+<header class="page-header friends-header">
+    <p class="label label-accent">// around the web</p>
+    <h1 id="friends-title">Friends</h1>
+    <p class="lead">Good people and good reading. A collection of blogs I keep coming back to.</p>
+</header>
+@foreach (FriendGroup group in Site.Friends)
+{
+    <section aria-labelledby="@(group.Id == "friends" ? "friends-title" : "friends-" + group.Id)"
+             class="friends-section">
+        @if (group.Id != "friends")
+        {
+            <div class="section-heading"><h2 id="friends-@group.Id">@group.Title</h2></div>
+        }
+        @if (group.Blogs.Count == 0)
+        {
+            <p class="friends-empty">Links coming soon.</p>
+        }
+        else if (group.Id == "others")
+        {
+            <div class="friends-controls" id="friends-controls" hidden>
+                <label for="friends-sort">Sort by
+                    <select id="friends-sort" aria-controls="friends-results">
+                        <option value="name">Name A–Z</option>
+                        <option value="reverse">Name Z–A</option>
+                        <option value="website">Website A–Z</option>
+                    </select>
+                </label>
+                <label for="friends-group">Group by
+                    <select id="friends-group" aria-controls="friends-results">
+                        <option value="none">No grouping</option>
+                        <option value="subject">Subject</option>
+                    </select>
+                </label>
+            </div>
+            <p class="mono friends-group-note" id="friends-group-note" hidden>Blogs with multiple subjects appear in
+                each matching group.</p>
+            <p class="visually-hidden" id="friends-status" role="status"></p>
+            <div id="friends-results">
+                <ul class="friends-list">
+                    @foreach (Friend blog in group.Blogs)
+                    {
+                        <li class="friend-row" data-name="@blog.Name">
+                            <a href="@blog.Url" rel="noopener" target="_blank"><span>@blog.Name <span
+                                        aria-hidden="true">↗</span></span><span class="mono friend-url">@blog.Url</span></a>
+                            <partial name="_FriendTags" model="blog.Tags"/>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+        else
+        {
+            <div class="card-grid friends-grid@(group.Id == "friends" ? " friends-grid-featured" : "")">
+                @foreach (Friend blog in group.Blogs)
+                {
+                    <partial name="_FriendCard" model="blog"/>
+                }
+            </div>
+        }
+    </section>
+}
+<script defer src="@Assets.Url("/assets/js/site/friends.js")"></script>

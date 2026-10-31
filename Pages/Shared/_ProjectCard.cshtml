@@ -1,0 +1,9 @@
+@model Repository
+<a class="card" href="@Model.Url" rel="noopener" target="_blank">
+    @if (Model.Pinned is not null)
+    {
+        <span class="label"><svg aria-hidden="true" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="14"><path d="M12 17v5"></path><path d="M9 3h6l-1 7 4 3v2H6v-2l4-3z"></path></svg>Pinned</span>
+    }
+    <span class="card-title">@Model.Name</span><span class="card-text">@Model.Description</span>
+    <span class="card-meta"><span>@Model.Language</span><span>★ @Model.StargazerCount</span></span>
+</a>

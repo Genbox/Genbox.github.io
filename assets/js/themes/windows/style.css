@@ -1,0 +1,1163 @@
+/* Win95 and WinXP themes: the page becomes a retro desktop. The shared rules match either theme's class on <html>;
+   the script adds the taskbar, Start menu, desktop icons and title bars, and removes them all again when the theme
+   is switched off. */
+html:is(.theme-win95, .theme-winxp) {
+    --bg: #008080;
+    --heading: #ffffff;
+    --text: #ffffff;
+    --body: #ffffff;
+    --sub: #ffffff;
+    --muted: #ffffff;
+    --faint: #ffffff;
+    --accent: #ffffb4;
+    --line: rgba(255, 255, 255, 0.35);
+    --line-2: rgba(255, 255, 255, 0.3);
+    --line-3: rgba(255, 255, 255, 0.2);
+    --win-font: Tahoma, Verdana, "Segoe UI", sans-serif;
+    --win-raised: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff, inset -2px -2px #808080, inset 2px 2px #dfdfdf;
+    --win-sunken: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+    --win-field: inset -1px -1px #ffffff, inset 1px 1px #808080;
+    --win-title: #000080;
+}
+
+html:is(.theme-win95, .theme-winxp) body {
+    padding-bottom: 34px;
+}
+
+/* Switching the theme on or off is instant, rather than fading every card and button out of the old colours. */
+html.win-instant,
+html.win-instant * {
+    transition: none !important;
+}
+
+/* Scrollbars: light native controls on the light windows, then each version's own scrollbars where the browser
+   can draw them (Chrome, Edge, Safari) and matching colours where it can only tint them (Firefox). Code
+   blocks keep a thin dark scrollbar to suit their console look. */
+html:is(.theme-win95, .theme-winxp) {
+    color-scheme: light;
+}
+
+@supports selector(::-webkit-scrollbar) {
+    html:is(.theme-win95, .theme-winxp) ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+    }
+
+    html:is(.theme-win95, .theme-winxp) ::-webkit-scrollbar-button:single-button {
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    /* Win95: a dotted track, a bevelled thumb and square buttons with black pixel arrows. */
+    html.theme-win95 ::-webkit-scrollbar-track {
+        background: repeating-conic-gradient(#c0c0c0 0 25%, #ffffff 0 50%) 0 0 / 2px 2px;
+    }
+
+    html.theme-win95 ::-webkit-scrollbar-thumb,
+    html.theme-win95 ::-webkit-scrollbar-button:single-button {
+        background-color: #c0c0c0;
+        box-shadow: var(--win-raised);
+    }
+
+    html.theme-win95 ::-webkit-scrollbar-button:single-button:active {
+        box-shadow: var(--win-sunken);
+    }
+
+    html.theme-win95 ::-webkit-scrollbar-button:single-button:vertical:decrement {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'%3E%3Cpath d='M3 0h1v1h1v1h1v1h1v1H0V3h1V2h1V1h1z'/%3E%3C/svg%3E");
+    }
+
+    html.theme-win95 ::-webkit-scrollbar-button:single-button:vertical:increment {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='4' shape-rendering='crispEdges'%3E%3Cpath d='M0 0h7v1H6v1H5v1H4v1H3V3H2V2H1V1H0z'/%3E%3C/svg%3E");
+    }
+
+    html.theme-win95 ::-webkit-scrollbar-button:single-button:horizontal:decrement {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'%3E%3Cpath d='M3 0h1v7H3V6H2V5H1V4H0V3h1V2h1V1h1z'/%3E%3C/svg%3E");
+    }
+
+    html.theme-win95 ::-webkit-scrollbar-button:single-button:horizontal:increment {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='7' shape-rendering='crispEdges'%3E%3Cpath d='M0 0h1v1h1v1h1v1h1v1H3v1H2v1H1v1H0z'/%3E%3C/svg%3E");
+    }
+
+    html.theme-win95 ::-webkit-scrollbar-corner {
+        background: #c0c0c0;
+    }
+
+    /* WinXP: a pale track, a rounded soft-blue thumb with a grip, and matching buttons with blue chevrons. */
+    html.theme-winxp ::-webkit-scrollbar-track {
+        background: #f4f3ee;
+    }
+
+    html.theme-winxp ::-webkit-scrollbar-thumb,
+    html.theme-winxp ::-webkit-scrollbar-button:single-button {
+        border: 1px solid #a3b9ec;
+        border-radius: 3px;
+        background-color: #c6d6fb;
+    }
+
+    html.theme-winxp ::-webkit-scrollbar-thumb:vertical {
+        background:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='7'%3E%3Cpath d='M0 .5h8M0 3.5h8M0 6.5h8' stroke='%23eef3ff'/%3E%3C/svg%3E") center
+                no-repeat,
+            linear-gradient(90deg, #d4e1fd, #c2d3fb 45%, #b3c8f8);
+    }
+
+    html.theme-winxp ::-webkit-scrollbar-thumb:horizontal {
+        background:
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='8'%3E%3Cpath d='M.5 0v8M3.5 0v8M6.5 0v8' stroke='%23eef3ff'/%3E%3C/svg%3E") center
+                no-repeat,
+            linear-gradient(180deg, #d4e1fd, #c2d3fb 45%, #b3c8f8);
+    }
+
+    html.theme-winxp ::-webkit-scrollbar-thumb:hover,
+    html.theme-winxp ::-webkit-scrollbar-button:single-button:hover {
+        border-color: #7d9ce6;
+    }
+
+    html.theme-winxp ::-webkit-scrollbar-button:single-button:active {
+        background-color: #9fb8f2;
+    }
+
+    html.theme-winxp ::-webkit-scrollbar-button:single-button:vertical:decrement {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='m1 4 3-3 3 3' fill='none' stroke='%234d6185' stroke-width='1.6'/%3E%3C/svg%3E");
+    }
+
+    html.theme-winxp ::-webkit-scrollbar-button:single-button:vertical:increment {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='m1 1 3 3 3-3' fill='none' stroke='%234d6185' stroke-width='1.6'/%3E%3C/svg%3E");
+    }
+
+    html.theme-winxp ::-webkit-scrollbar-button:single-button:horizontal:decrement {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='8'%3E%3Cpath d='M4 1 1 4l3 3' fill='none' stroke='%234d6185' stroke-width='1.6'/%3E%3C/svg%3E");
+    }
+
+    html.theme-winxp ::-webkit-scrollbar-button:single-button:horizontal:increment {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='8'%3E%3Cpath d='m1 1 3 3-3 3' fill='none' stroke='%234d6185' stroke-width='1.6'/%3E%3C/svg%3E");
+    }
+
+    html.theme-winxp ::-webkit-scrollbar-corner {
+        background: #f4f3ee;
+    }
+
+    /* Code blocks: thin and dark, without buttons. */
+    html:is(.theme-win95, .theme-winxp) .code pre::-webkit-scrollbar,
+    html:is(.theme-win95, .theme-winxp) .prose > pre::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    html:is(.theme-win95, .theme-winxp) .code pre::-webkit-scrollbar-track,
+    html:is(.theme-win95, .theme-winxp) .prose > pre::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    html:is(.theme-win95, .theme-winxp) .code pre::-webkit-scrollbar-thumb,
+    html:is(.theme-win95, .theme-winxp) .prose > pre::-webkit-scrollbar-thumb {
+        border: 0;
+        border-radius: 4px;
+        background: #3a414b;
+        box-shadow: none;
+    }
+
+    html:is(.theme-win95, .theme-winxp) .code pre::-webkit-scrollbar-button,
+    html:is(.theme-win95, .theme-winxp) .prose > pre::-webkit-scrollbar-button {
+        display: none;
+    }
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    html.theme-win95 {
+        scrollbar-color: #c0c0c0 #dfdfdf;
+    }
+
+    html.theme-winxp {
+        scrollbar-color: #b8cbf6 #f4f3ee;
+    }
+
+    html:is(.theme-win95, .theme-winxp) .code pre,
+    html:is(.theme-win95, .theme-winxp) .prose > pre {
+        scrollbar-color: #3a414b transparent;
+        scrollbar-width: thin;
+    }
+}
+
+html:is(.theme-win95, .theme-winxp) ::selection {
+    background: #000080;
+    color: #ffffff;
+}
+
+/* Windows: grey faces with raised bevels and black text, and a title bar added by the script. */
+html:is(.theme-win95, .theme-winxp) .card,
+html:is(.theme-win95, .theme-winxp) .panel,
+html:is(.theme-win95, .theme-winxp) .post-list,
+html:is(.theme-win95, .theme-winxp) .article,
+html:is(.theme-win95, .theme-winxp) .topic-section,
+html:is(.theme-win95, .theme-winxp) .about-body,
+html:is(.theme-win95, .theme-winxp) .results,
+html:is(.theme-win95, .theme-winxp) #friends-results,
+html:is(.theme-win95, .theme-winxp) .site-header,
+html:is(.theme-win95, .theme-winxp) .site-footer,
+.win-dialog {
+    --heading: #000000;
+    --text: #000000;
+    --body: #111111;
+    --sub: #222222;
+    --muted: #444444;
+    --faint: #444444;
+    --accent: #000080;
+    --line: #808080;
+    --line-2: #a0a0a0;
+    --line-3: #b8b8b8;
+    --surface: #c0c0c0;
+    --surface-2: #d4d4d4;
+    background: #c0c0c0;
+    color: #000000;
+    border: 0;
+    border-radius: 0;
+    box-shadow: var(--win-raised);
+}
+
+html:is(.theme-win95, .theme-winxp) .card,
+html:is(.theme-win95, .theme-winxp) .panel,
+html:is(.theme-win95, .theme-winxp) .post-list,
+html:is(.theme-win95, .theme-winxp) .article,
+html:is(.theme-win95, .theme-winxp) .topic-section,
+html:is(.theme-win95, .theme-winxp) .about-body,
+html:is(.theme-win95, .theme-winxp) .results,
+html:is(.theme-win95, .theme-winxp) .site-footer {
+    position: relative;
+    padding: 34px 18px 18px;
+}
+
+/* The footer is its own container, so as a window it keeps the content column's width and gutters. */
+html:is(.theme-win95, .theme-winxp) .site-footer {
+    width: min(1096px, calc(100% - 64px));
+    margin-bottom: 16px;
+}
+
+@media (max-width: 640px) {
+    html:is(.theme-win95, .theme-winxp) .site-footer {
+        width: calc(100% - 32px);
+    }
+}
+
+html:is(.theme-win95, .theme-winxp) .card:hover {
+    border-color: transparent;
+}
+
+/* Code keeps its dark scheme inside a window, sunk into the face like a console. */
+html:is(.theme-win95, .theme-winxp) .code,
+html:is(.theme-win95, .theme-winxp) .prose > pre {
+    --text: #e7e9ec;
+    --heading: #f4f5f7;
+    --body: #c9ced5;
+    --sub: #a9b0ba;
+    --muted: #8f97a2;
+    --faint: #8f97a2;
+    --accent: #6ee7b7;
+    --line-2: #22262d;
+    --hover-line: #3a414b;
+    border: 0;
+    border-radius: 0;
+    box-shadow: var(--win-sunken);
+}
+
+html:is(.theme-win95, .theme-winxp) .card :not(pre) > code,
+html:is(.theme-win95, .theme-winxp) .panel :not(pre) > code,
+html:is(.theme-win95, .theme-winxp) .article :not(pre) > code {
+    border-radius: 0;
+    background: #ffffff;
+    border: 1px solid #808080;
+    color: #000000;
+}
+
+html:is(.theme-win95, .theme-winxp) .row:hover {
+    --text: #ffffff;
+    --heading: #ffffff;
+    --muted: #ffffff;
+    background: #000080;
+    color: #ffffff;
+}
+
+/* Friends use the same title-only accent hover as article cards. */
+html:is(.theme-win95, .theme-winxp) .friend-row > a:hover {
+    color: var(--heading);
+}
+
+html:is(.theme-win95, .theme-winxp) .friend-row > a:hover > span:first-child {
+    color: var(--accent);
+}
+
+html:is(.theme-win95, .theme-winxp) .pill {
+    border-radius: 0;
+}
+
+html:is(.theme-win95, .theme-winxp) .toc,
+html:is(.theme-win95, .theme-winxp) .series,
+html:is(.theme-win95, .theme-winxp) .adj {
+    border: 0;
+    border-radius: 0;
+    background: #c0c0c0;
+    box-shadow: var(--win-sunken);
+}
+
+html:is(.theme-win95, .theme-winxp) .hero h1 {
+    text-shadow: 2px 2px 0 #004c4c;
+}
+
+/* The page's controls become bevelled buttons, its fields white sunken boxes, and its tables list views. */
+html:is(.theme-win95, .theme-winxp) .button,
+html:is(.theme-win95, .theme-winxp) .chip,
+html:is(.theme-win95, .theme-winxp) .pg,
+html:is(.theme-win95, .theme-winxp) kbd {
+    --text: #000000;
+    --heading: #000000;
+    --muted: #444444;
+    border: 0;
+    border-radius: 0;
+    background: #c0c0c0;
+    box-shadow: var(--win-raised);
+    color: #000000;
+}
+
+html:is(.theme-win95, .theme-winxp) .button:hover,
+html:is(.theme-win95, .theme-winxp) .chip:hover,
+html:is(.theme-win95, .theme-winxp) .pg:hover {
+    border-color: transparent;
+    background: #d4d0c8;
+    color: #000000;
+}
+
+html:is(.theme-win95, .theme-winxp) .button-primary {
+    font-weight: 700;
+    outline: 1px solid #000000;
+    outline-offset: -1px;
+}
+
+html:is(.theme-win95, .theme-winxp) .pg[aria-current] {
+    box-shadow: var(--win-sunken);
+    font-weight: 700;
+}
+
+html:is(.theme-win95, .theme-winxp) .pg.is-disabled {
+    color: #808080;
+    text-shadow: 1px 1px #ffffff;
+}
+
+html:is(.theme-win95, .theme-winxp) .search-field {
+    --text: #000000;
+    --heading: #000000;
+    --muted: #444444;
+    border: 0;
+    border-radius: 0;
+    background: #ffffff;
+    box-shadow: var(--win-sunken);
+    color: #000000;
+}
+
+html:is(.theme-win95, .theme-winxp) mark {
+    border-radius: 0;
+    background: #ffff00;
+    color: #000000;
+}
+
+html:is(.theme-win95, .theme-winxp) .wordmark-icon,
+html:is(.theme-win95, .theme-winxp) .terminal {
+    border: 0;
+    border-radius: 0;
+    box-shadow: var(--win-sunken);
+}
+
+html:is(.theme-win95, .theme-winxp) .wordmark-icon {
+    background: #0d1114;
+    color: #6ee7b7;
+}
+
+html:is(.theme-win95, .theme-winxp) .part-n {
+    border-color: #808080;
+    background: #ffffff;
+    color: #000000;
+}
+
+html.theme-win95 .part-n {
+    border-radius: 0;
+}
+
+html:is(.theme-win95, .theme-winxp) .part[aria-current] .part-n {
+    border-color: #000080;
+    background: #000080;
+    color: #ffffff;
+}
+
+html:is(.theme-win95, .theme-winxp) .prose table,
+html:is(.theme-win95, .theme-winxp) .chart,
+html:is(.theme-win95, .theme-winxp) .prose blockquote {
+    border: 0;
+    border-radius: 0;
+    background: #ffffff;
+    box-shadow: var(--win-sunken);
+}
+
+html:is(.theme-win95, .theme-winxp) .prose th {
+    background: #c0c0c0;
+    box-shadow: var(--win-raised);
+    color: #000000;
+}
+
+html:is(.theme-win95, .theme-winxp) .prose td {
+    border-bottom-color: #dfdfdf;
+    color: #000000;
+}
+
+html:is(.theme-win95, .theme-winxp) .prose tbody tr:hover {
+    background: #000080;
+}
+
+html:is(.theme-win95, .theme-winxp) .prose tbody tr:hover td {
+    color: #ffffff;
+}
+
+/* The site header becomes an application menu bar. */
+html:is(.theme-win95, .theme-winxp) .site-header {
+    margin-top: 8px;
+    padding: 6px 10px;
+}
+
+html:is(.theme-win95, .theme-winxp) .site-nav a {
+    padding: 2px 8px;
+    color: #000000;
+    font: 13px var(--win-font);
+}
+
+html:is(.theme-win95, .theme-winxp) .site-nav a:hover,
+html:is(.theme-win95, .theme-winxp) .site-nav a[aria-current] {
+    background: #000080;
+    color: #ffffff;
+}
+
+html:is(.theme-win95, .theme-winxp) .site-nav .icon-link {
+    border: 0;
+    border-radius: 0;
+    background: #c0c0c0;
+    box-shadow: var(--win-raised);
+    color: #000000;
+}
+
+html:is(.theme-win95, .theme-winxp) .site-nav .icon-link:hover {
+    background: #c0c0c0;
+    color: #000080;
+}
+
+.win-titlebar {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    left: 3px;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    height: 20px;
+    padding: 0 2px 0 5px;
+    background: var(--win-title);
+    color: #ffffff;
+    font: 700 12px/1 var(--win-font);
+    cursor: default;
+    user-select: none;
+    touch-action: none;
+}
+
+.win-title {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.win-card-link,
+.win-card-link:hover {
+    display: contents;
+    color: inherit;
+}
+
+.win-card-link:focus-visible {
+    outline: none;
+}
+
+html:is(.theme-win95, .theme-winxp) .card:has(> .win-card-link:focus-visible) {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.win-button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 1px;
+}
+
+.win-button {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    display: grid;
+    place-items: center;
+    width: 16px;
+    height: 14px;
+    background: #c0c0c0;
+    box-shadow: var(--win-raised);
+    color: #000000;
+    font: 700 9px/1 var(--win-font);
+}
+
+/* Pixel-aligned window silhouettes: a thick title bar above an open interior. */
+.win-control-icon,
+.win-maximize-icon {
+    display: block;
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+    shape-rendering: crispEdges;
+}
+
+.win-restore-glyph,
+.win-button[aria-pressed="true"] .win-maximize-glyph {
+    display: none;
+}
+
+.win-button[aria-pressed="true"] .win-restore-glyph {
+    display: inline;
+}
+
+html.theme-win95 .win-maximize-icon {
+    width: 10px;
+    height: 10px;
+}
+
+html.theme-win95 .win-button[data-action="close"] .win-control-icon {
+    width: 9px;
+    height: 9px;
+}
+
+html.theme-winxp .win-control-icon,
+html.theme-winxp .win-maximize-icon {
+    width: 14px;
+    height: 14px;
+}
+
+.win-button:active {
+    box-shadow: var(--win-sunken);
+}
+
+.win-button + .win-button:last-child {
+    margin-left: 2px;
+}
+
+html:is(.theme-win95, .theme-winxp) .win-min {
+    align-self: start;
+    min-height: 26px;
+    padding-bottom: 3px;
+}
+
+html:is(.theme-win95, .theme-winxp) .win-min > :not(.win-titlebar) {
+    display: none !important;
+}
+
+html:is(.theme-win95, .theme-winxp) .win-max {
+    position: fixed;
+    inset: 8px 8px 38px;
+    z-index: 950;
+    overflow: auto;
+    translate: none !important;
+}
+
+html:is(.theme-win95, .theme-winxp) .win-closed {
+    display: none !important;
+}
+
+/* The taskbar, Start menu, desktop icons and dialogs. */
+.win-taskbar {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 960;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    height: 30px;
+    padding: 3px 2px 2px;
+    background: #c0c0c0;
+    box-shadow:
+        inset 0 1px #dfdfdf,
+        inset 0 2px #ffffff;
+    color: #000000;
+    font: 12px var(--win-font);
+}
+
+.win-start,
+.win-task,
+.win-ok {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    height: 24px;
+    padding: 0 7px;
+    border: 0;
+    border-radius: 0;
+    background: #c0c0c0;
+    box-shadow: var(--win-raised);
+    color: #000000;
+    font: inherit;
+    cursor: default;
+}
+
+.win-start {
+    font-weight: 700;
+}
+
+.win-start[aria-expanded="true"],
+.win-task {
+    box-shadow: var(--win-sunken);
+}
+
+.win-task {
+    min-width: 0;
+    max-width: 220px;
+    background: repeating-conic-gradient(#c0c0c0 0 25%, #ffffff 0 50%) 0 0 / 2px 2px;
+    font-weight: 700;
+}
+
+.win-task span {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.win-start:focus-visible,
+.win-task:focus-visible,
+.win-ok:focus-visible {
+    outline: 1px dotted #000000;
+    outline-offset: -5px;
+}
+
+.win-tray {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    height: 24px;
+    margin-left: auto;
+    padding: 0 10px 0 6px;
+    box-shadow: var(--win-field);
+}
+
+.win-start-menu {
+    position: fixed;
+    bottom: 30px;
+    left: 2px;
+    z-index: 970;
+    display: flex;
+    padding: 3px;
+    background: #c0c0c0;
+    box-shadow: var(--win-raised);
+    color: #000000;
+    font: 12px var(--win-font);
+}
+
+.win-start-menu[hidden] {
+    display: none;
+}
+
+.win-banner {
+    display: flex;
+    gap: 0.3em;
+    align-items: flex-end;
+    width: 24px;
+    padding: 6px 0;
+    background: linear-gradient(0deg, #000000, #808080);
+    color: #c0c0c0;
+    font: 700 18px/24px var(--win-font);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.win-banner b {
+    color: #ffffff;
+}
+
+.win-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 190px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.win-menu-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    padding: 5px 24px 5px 6px;
+    border: 0;
+    background: none;
+    color: #000000;
+    font: inherit;
+    text-align: left;
+    text-decoration: none;
+    cursor: default;
+}
+
+.win-menu-item canvas {
+    width: 16px;
+    height: 16px;
+    image-rendering: pixelated;
+}
+
+.win-menu-item:hover,
+.win-menu-item:focus-visible {
+    background: #000080;
+    color: #ffffff;
+    outline: none;
+}
+
+.win-menu-sep {
+    height: 2px;
+    margin: 3px 2px;
+    box-shadow:
+        inset 0 1px #808080,
+        inset 0 -1px #ffffff;
+}
+
+.win-icons {
+    position: fixed;
+    top: 110px;
+    left: 8px;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.win-icon {
+    display: grid;
+    justify-items: center;
+    gap: 4px;
+    width: 76px;
+    color: #ffffff;
+    font: 12px/1.25 var(--win-font);
+    text-align: center;
+    text-decoration: none;
+    cursor: default;
+}
+
+.win-icon canvas {
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+}
+
+.win-icon span {
+    padding: 1px 3px;
+}
+
+.win-icon[aria-selected="true"] span,
+.win-icon-drop-target span,
+.win-icon:focus-visible span {
+    background: #000080;
+    outline: 1px dotted #ffffff;
+}
+
+.win-icon-dragging {
+    opacity: 0.5;
+}
+
+.win-icon:focus-visible {
+    outline: none;
+}
+
+@media (max-width: 1379px) {
+    .win-icons {
+        display: none;
+    }
+}
+
+.win-dialog {
+    min-width: 300px;
+    max-width: calc(100vw - 32px);
+    padding: 3px;
+    font: 12px var(--win-font);
+}
+
+.win-dialog::backdrop {
+    background: transparent;
+}
+
+.win-dialog .win-titlebar {
+    position: static;
+}
+
+.win-dialog-body {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 16px 14px 10px;
+}
+
+.win-dialog-body canvas {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    image-rendering: pixelated;
+}
+
+.win-dialog-actions {
+    display: flex;
+    justify-content: center;
+    padding: 6px 0 10px;
+}
+
+.win-ok {
+    justify-content: center;
+    min-width: 75px;
+}
+
+.win-shutdown {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-content: center;
+    gap: 18px;
+    padding: 16px;
+    background: #000000;
+    color: #ff8a1e;
+    font: 700 clamp(20px, 3.4vw, 34px)/1.4 var(--win-font);
+    text-align: center;
+    cursor: pointer;
+}
+
+.win-shutdown small {
+    color: #8a6a40;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@media print {
+    .win-taskbar,
+    .win-start-menu,
+    .win-icons,
+    .win-shutdown,
+    .win-titlebar {
+        display: none !important;
+    }
+}
+
+/* WinXP: rounded blue title bars over beige window faces, a blue taskbar with a green Start button, and a
+   desktop of sky and green hills drawn from gradients. */
+html.theme-winxp {
+    --bg: #3a6ea5;
+    --win-title: linear-gradient(180deg, #0997ff, #0053ee 8%, #0050ee 40%, #0066ff 88%, #005bff 95%, #003dd7);
+    --win-xp-select: #316ac5;
+}
+
+html.theme-winxp body {
+    padding-bottom: 36px;
+    background:
+        radial-gradient(150% 55% at 28% 100%, #2e6b1b 0 40%, #3a7f22 41% 45%, transparent 46%), radial-gradient(120% 45% at 92% 104%, #285f17 0 40%, transparent 41%),
+        linear-gradient(180deg, #0f4fbf 0%, #2560c6 40%, #3068c8 70%);
+    background-attachment: fixed;
+}
+
+html.theme-winxp ::selection {
+    background: var(--win-xp-select);
+}
+
+html.theme-winxp .hero h1 {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.45);
+}
+
+html.theme-winxp .card,
+html.theme-winxp .panel,
+html.theme-winxp .post-list,
+html.theme-winxp .article,
+html.theme-winxp .topic-section,
+html.theme-winxp .about-body,
+html.theme-winxp .results,
+html.theme-winxp .site-footer,
+html.theme-winxp #friends-results,
+html.theme-winxp .win-dialog {
+    border-radius: 8px 8px 0 0;
+    background: #ece9d8;
+    box-shadow:
+        inset 0 0 0 3px #0831d9,
+        2px 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+html.theme-winxp .card,
+html.theme-winxp .panel,
+html.theme-winxp .post-list,
+html.theme-winxp .article,
+html.theme-winxp .topic-section,
+html.theme-winxp .about-body,
+html.theme-winxp .results,
+html.theme-winxp .site-footer {
+    padding: 42px 20px 20px;
+}
+
+html.theme-winxp .button,
+html.theme-winxp .chip,
+html.theme-winxp .pg,
+html.theme-winxp kbd,
+html.theme-winxp .button:hover,
+html.theme-winxp .chip:hover,
+html.theme-winxp .pg:hover {
+    background: linear-gradient(180deg, #ffffff, #f4f2e8 85%, #e6e0d2);
+    box-shadow: inset 0 0 0 1px #f8b636;
+    color: #000000;
+}
+
+html.theme-winxp .pg[aria-current] {
+    border-color: #003c74;
+    background: var(--win-xp-select);
+    color: #ffffff;
+}
+
+html.theme-winxp .search-field,
+html.theme-winxp .prose table,
+html.theme-winxp .chart,
+html.theme-winxp .prose blockquote {
+    box-shadow: 0 0 0 1px #7f9db9;
+}
+
+html.theme-winxp .prose th {
+    background: linear-gradient(180deg, #ffffff, #ebeadb);
+    box-shadow: inset 0 -2px #d6d2c2;
+}
+
+html.theme-winxp .prose tbody tr:hover {
+    background: var(--win-xp-select);
+}
+
+html.theme-winxp .terminal,
+html.theme-winxp .wordmark-icon {
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px #7f9db9;
+}
+
+html.theme-winxp .win-dialog {
+    padding: 0 3px 3px;
+}
+
+html.theme-winxp .win-titlebar {
+    top: 0;
+    right: 0;
+    left: 0;
+    gap: 3px;
+    height: 30px;
+    padding: 0 5px 0 9px;
+    border-radius: 8px 8px 0 0;
+    font:
+        700 13px/1 "Trebuchet MS",
+        Tahoma,
+        sans-serif;
+    text-shadow: 1px 1px #0f1089;
+}
+
+html.theme-winxp .win-dialog .win-titlebar {
+    margin: 0 -3px;
+}
+
+html.theme-winxp .win-button {
+    width: 21px;
+    height: 21px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    background: linear-gradient(180deg, #4a96f5, #2564e0 60%, #1c55d0);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font:
+        700 11px/1 Tahoma,
+        sans-serif;
+    text-shadow: none;
+}
+
+html.theme-winxp .win-button:last-child {
+    margin-left: 2px;
+    background: linear-gradient(180deg, #ea8466, #d6532f 60%, #c53f1d);
+}
+
+html.theme-winxp .win-button:active {
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+html.theme-winxp .win-min {
+    min-height: 33px;
+}
+
+html.theme-winxp .site-header {
+    border-radius: 0;
+    background: #ece9d8;
+    box-shadow:
+        inset 0 -1px #aca899,
+        0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+html.theme-winxp .site-nav a:hover,
+html.theme-winxp .site-nav a[aria-current] {
+    border-radius: 3px;
+    background: var(--win-xp-select);
+}
+
+html.theme-winxp .site-nav a:hover {
+    background: #f4f2e8;
+    color: #000000;
+}
+
+html:is(.theme-win95, .theme-winxp) #friends-results {
+    padding: 4px 20px;
+}
+
+html.theme-winxp .site-nav .icon-link {
+    border: 1px solid #003c74;
+    border-radius: 3px;
+    background: linear-gradient(180deg, #ffffff, #ece9d8 85%, #d6d0c5);
+    box-shadow: none;
+}
+
+html.theme-winxp .row:hover {
+    background: var(--win-xp-select);
+}
+
+html.theme-winxp .code,
+html.theme-winxp .prose > pre {
+    box-shadow: 0 0 0 1px #7f9db9;
+}
+
+html.theme-winxp .toc,
+html.theme-winxp .series,
+html.theme-winxp .adj {
+    background: #ffffff;
+    box-shadow: 0 0 0 1px #7f9db9;
+}
+
+html.theme-winxp .win-taskbar {
+    gap: 6px;
+    height: 30px;
+    padding: 0;
+    background: linear-gradient(180deg, #3168d5, #4993e6 4%, #2157d7 10%, #2663e0 50%, #2157d7 92%, #1941a5);
+    box-shadow: none;
+    color: #ffffff;
+}
+
+html.theme-winxp .win-start {
+    height: 30px;
+    padding: 0 20px 0 8px;
+    border-radius: 0 14px 14px 0;
+    background: linear-gradient(180deg, #3c9437, #55b950 12%, #3a9e33 50%, #2e7d2a 92%);
+    box-shadow:
+        inset -1px 0 2px rgba(0, 0, 0, 0.35),
+        2px 0 3px rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    font:
+        italic 700 17px/1 "Trebuchet MS",
+        Tahoma,
+        sans-serif;
+    text-shadow: 1px 1px 1px #1c3e15;
+    text-transform: lowercase;
+}
+
+html.theme-winxp .win-start[aria-expanded="true"] {
+    background: linear-gradient(180deg, #2e7d2a, #3a9e33 50%, #2e7d2a);
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+html.theme-winxp .win-start:focus-visible,
+html.theme-winxp .win-task:focus-visible {
+    outline-color: #ffffff;
+}
+
+html.theme-winxp .win-task {
+    border-radius: 3px;
+    background: #1e52b7;
+    box-shadow:
+        inset 1px 1px 2px rgba(0, 0, 0, 0.45),
+        inset -1px -1px rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-weight: 400;
+}
+
+html.theme-winxp .win-tray {
+    height: 30px;
+    padding: 0 12px;
+    background: linear-gradient(180deg, #0c59b9, #18b5f2 8%, #1290e8 50%, #0d8dea 90%, #0a74d0);
+    box-shadow:
+        inset 1px 0 #1042af,
+        inset 2px 0 #3ab4f2;
+    color: #ffffff;
+}
+
+html.theme-winxp .win-start-menu {
+    flex-direction: column;
+    padding: 0;
+    border-radius: 8px 8px 0 0;
+    background: #ffffff;
+    box-shadow:
+        0 0 0 2px #0831d9,
+        3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+html.theme-winxp .win-banner {
+    width: auto;
+    padding: 10px 14px;
+    border-radius: 8px 8px 0 0;
+    background: linear-gradient(180deg, #1868ce, #0e60cb 15%, #3d95ff 85%, #2c6fd6);
+    color: #ffffff;
+    font:
+        700 16px/1.2 "Trebuchet MS",
+        Tahoma,
+        sans-serif;
+    text-shadow: 1px 1px #0f1089;
+    writing-mode: horizontal-tb;
+    transform: none;
+}
+
+html.theme-winxp .win-menu {
+    min-width: 220px;
+    padding: 6px 0;
+    border-bottom: 3px solid #0831d9;
+}
+
+html.theme-winxp .win-menu-item {
+    padding-block: 6px;
+}
+
+html.theme-winxp .win-menu-item:hover,
+html.theme-winxp .win-menu-item:focus-visible {
+    background: var(--win-xp-select);
+}
+
+html.theme-winxp .win-menu-sep {
+    box-shadow: inset 0 1px #d6d3ce;
+}
+
+html.theme-winxp .win-icon span {
+    text-shadow: 1px 1px 2px #000000;
+}
+
+html.theme-winxp .win-icon[aria-selected="true"] span,
+html.theme-winxp .win-icon-drop-target span,
+html.theme-winxp .win-icon:focus-visible span {
+    background: var(--win-xp-select);
+    outline: 0;
+}
+
+html.theme-winxp .win-shutdown {
+    background: linear-gradient(180deg, #5a7edc, #0b3b9e);
+    color: #ffffff;
+}
+
+html.theme-winxp .win-shutdown small {
+    color: #c6d6f7;
+}

@@ -1,0 +1,32 @@
+@page "/topics/{slug}/"
+@model TopicModel
+@{
+    Topic topic = Model.Topic;
+    Post[] posts = Site.PostsForTopic(topic.Name).ToArray();
+    ViewData["Title"] = topic.Name;
+    ViewData["Description"] = topic.Description;
+    ViewData["CanonicalPath"] = topic.Url;
+    ViewData["Styles"] = new[] { "topics.css" };
+    string years = posts.Length == 0 ? "" : " · " + posts[^1].Date.Year;
+    if (posts.Length > 0 && posts[0].Date.Year != posts[^1].Date.Year)
+        years += "–" + posts[0].Date.Year;
+}
+<header class="page-header">
+    <a class="back-link" href="/topics/">← All topics</a>
+    <h1>@topic.Name</h1>
+    <p class="lead">@topic.Description</p>
+</header>
+<div class="with-sidebar topic-body">
+    <section aria-labelledby="list-title" class="post-list">
+        <div class="section-heading">
+            <h2 id="list-title">Articles</h2>
+            <span class="mono">@posts.Length @(posts.Length == 1 ? "article" : "articles")@years</span>
+        </div>
+        <partial name="_PostList" model="posts"/>
+    </section>
+    <aside aria-label="Other topics" class="sidebar">
+        <section class="panel"><h2 class="label">Other topics</h2>
+            <partial name="_TopicList" model="topic.Name"/>
+        </section>
+    </aside>
+</div>

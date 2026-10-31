@@ -1,0 +1,236 @@
+.doomguy {
+    position: relative;
+    scale: -1 1;
+}
+
+.doom-active .doomguy::before,
+.doom-active .doomguy::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../../../images/heroes/doomguy-idle.webp");
+    background-size: 200% 200%;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+.doom-active .doomguy::before {
+    clip-path: inset(0 0 45% 0);
+    transform-origin: 50% 55%;
+    animation: doom-idle 4000ms steps(2, end) infinite;
+}
+
+.doom-active .doomguy::after {
+    clip-path: inset(55% 0 0 0);
+}
+
+/* Between the swaying upper body (::before) and the legs (::after), so low embers pass behind the boots. */
+.doom-particles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+}
+
+@keyframes doom-idle {
+    0%,
+    100% {
+        transform: scaleY(1) skewX(0);
+    }
+    16.667% {
+        transform: scaleY(1.025) skewX(1.5deg);
+    }
+    33.333% {
+        transform: scaleY(1.055) skewX(2.5deg);
+    }
+    50% {
+        transform: scaleY(1.035) skewX(0);
+    }
+    66.667% {
+        transform: scaleY(1.015) skewX(-2.5deg);
+    }
+    83.333% {
+        transform: scaleY(1.035) skewX(-1.5deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .doom-active .doomguy::before {
+        animation: none;
+    }
+}
+
+/* IDDQD: fire, eject, and reload, with the boots planted. */
+.doom-reload {
+    display: none;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+.doomguy.is-reloading .doom-reload {
+    display: block;
+}
+.doom-active .doomguy.is-reloading::before {
+    animation: doom-rack 1550ms steps(2, end) both;
+}
+.doom-reload span {
+    position: absolute;
+    bottom: 2px;
+    left: -5%;
+    width: 110%;
+    padding: 3px 0;
+    background: #160d0ce8;
+    border-block: 2px solid #d89c38;
+    color: #ffda79;
+    text-align: center;
+    font: bold 11px var(--mono);
+    letter-spacing: 1px;
+    transform: scaleX(-1);
+    animation: doom-locked 4550ms steps(1, end) both;
+}
+.doom-shell {
+    position: absolute;
+    left: 62%;
+    top: 40%;
+    width: 5px;
+    height: 11px;
+    background: #c34227;
+    border-top: 3px solid #f5ce70;
+    box-shadow: inset -2px 0 #782c21;
+    animation: doom-eject 1550ms linear both;
+}
+.doom-muzzle {
+    position: absolute;
+    left: 90%;
+    top: 25%;
+    width: 39px;
+    height: 28px;
+    background: #fff4bd;
+    clip-path: polygon(0 38%, 24% 28%, 18% 0, 49% 22%, 75% 7%, 70% 35%, 100% 49%, 69% 64%, 85% 95%, 46% 76%, 21% 100%, 24% 66%, 0 60%);
+    filter: drop-shadow(0 0 5px #ff8a23);
+    animation: doom-shot-flash 1550ms steps(1, end) both;
+}
+.doom-muzzle::after {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    background: white;
+}
+.doom-shot-smoke {
+    position: absolute;
+    left: 91%;
+    top: 28%;
+    width: 12px;
+    height: 9px;
+    background: #b3a697;
+    box-shadow:
+        6px -4px #8c8277,
+        12px 2px #d3c4ae;
+    animation: doom-shot-smoke 1550ms linear both;
+}
+@keyframes doom-shot-flash {
+    0% {
+        opacity: 1;
+    }
+    6%,
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes doom-shot-smoke {
+    0%,
+    5% {
+        opacity: 0;
+        transform: translate(0, 0) scale(0.6);
+    }
+    10% {
+        opacity: 0.65;
+        transform: translate(3px, -3px) scale(1);
+    }
+    60%,
+    100% {
+        opacity: 0;
+        transform: translate(22px, -26px) scale(2);
+    }
+}
+@keyframes doom-rack {
+    0%,
+    100% {
+        transform: none;
+    }
+    3% {
+        transform: rotate(-7deg) translate(-6px, 2px);
+    }
+    7% {
+        transform: rotate(-3deg) translate(-3px, 1px);
+    }
+    12% {
+        transform: rotate(-5deg) translate(-2px, 3px);
+    }
+    30%,
+    45% {
+        transform: rotate(-9deg) translate(-3px, 6px);
+    }
+    60% {
+        transform: rotate(-3deg) translate(0, 2px);
+    }
+    68% {
+        transform: rotate(4deg) translate(2px, -2px);
+    }
+    80% {
+        transform: rotate(-2deg);
+    }
+}
+@keyframes doom-eject {
+    0%,
+    20% {
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+    21% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0);
+    }
+    36% {
+        opacity: 1;
+        transform: translate(-24px, -23px) rotate(-140deg);
+    }
+    55% {
+        opacity: 1;
+        transform: translate(-49px, 12px) rotate(-310deg);
+    }
+    70%,
+    100% {
+        opacity: 0;
+        transform: translate(-61px, 70px) rotate(-430deg);
+    }
+}
+@keyframes doom-locked {
+    0%,
+    24% {
+        opacity: 0;
+    }
+    25%,
+    99% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .doom-active .doomguy.is-reloading::before {
+        animation: none;
+    }
+    .doom-shell,
+    .doom-muzzle,
+    .doom-shot-smoke {
+        display: none;
+    }
+    .doom-reload span {
+        animation: none;
+    }
+}

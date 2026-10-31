@@ -1,0 +1,116 @@
+.hero:has(.hal-caption) {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    column-gap: 12px;
+    padding-right: 0;
+}
+.hero:has(.hal-caption) > .label {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+.hero:has(.hal-caption) > h1 {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+.hero:has(.hal-caption) > .lead {
+    grid-column: 1 / -1;
+    grid-row: 4;
+}
+.hero:has(.hal-caption) .hal-sprite {
+    position: static;
+    transform: none;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    width: 100px;
+    height: 120px;
+}
+.hero .hal-caption {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    min-width: 0;
+    padding: 10px 12px;
+}
+@media (min-width: 1000px) {
+    .hero:has(.hal-caption) {
+        grid-template-columns: minmax(0, 1fr) 160px 220px;
+    }
+    .hero:has(.hal-caption) > .label {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    /* The sprite column is HAL's; a heading spanning it would run under the sprite at narrower desktop widths. */
+    .hero:has(.hal-caption) > h1 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    /* The cursor hangs into the column gap, so it never wraps onto a line of its own when the heading just fits. */
+    .hero:has(.hal-caption) > h1 .cursor {
+        margin-right: -0.52em;
+    }
+    .hero:has(.hal-caption) > .lead {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    .hero:has(.hal-caption) .hal-sprite {
+        position: absolute;
+        top: 50%;
+        right: auto;
+        transform: translateY(-50%);
+        grid-column: 2;
+        grid-row: 1 / 4;
+        width: 160px;
+        height: 192px;
+    }
+    .hero .hal-caption {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 220px;
+        grid-column: 3;
+        grid-row: 1 / 4;
+    }
+}
+
+.hal-caption {
+    align-self: flex-start;
+    max-width: 100%;
+    padding: 12px 18px;
+    border-left: 3px solid #ed624f;
+    border-radius: 0 8px 8px 0;
+    background: #110c0ef2;
+    color: #c2b8b8;
+}
+.hal-caption-label {
+    margin-bottom: 5px;
+    color: #dca59b;
+    font: 10px/1.5 var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.hal-caption-current {
+    margin: 0;
+    font: 600 clamp(20px, 3vw, 27px)/1.5 var(--sans);
+}
+.hal-caption-current .is-sung {
+    color: #f1d2cc;
+}
+.hal-caption-current .is-current {
+    color: #fff0c7;
+    background: #673427;
+    border-radius: 3px;
+    text-decoration: underline;
+    text-decoration-color: #ffb48d;
+    text-underline-offset: 5px;
+}
+.hal-caption-next {
+    margin: 4px 0 0;
+    color: #b6a8a8;
+    font: 15px/1.5 var(--sans);
+}
+@media print {
+    .hal-caption {
+        display: none;
+    }
+}

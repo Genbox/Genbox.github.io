@@ -1,0 +1,146 @@
+.prose .physics-diagram {
+    padding: 24px 16px;
+    break-inside: avoid;
+}
+
+.physics-diagram .physics-node {
+    padding: 16px 12px;
+    border: 1px solid var(--muted);
+    border-radius: 6px;
+    color: var(--text);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.physics-diagram .physics-root {
+    width: 60%;
+    margin: 0 auto;
+    border-color: var(--accent);
+}
+
+.physics-diagram .physics-trunk {
+    height: 24px;
+    width: 1px;
+    margin: 0 auto;
+    background: var(--accent);
+}
+
+.physics-diagram .physics-branches {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    position: relative;
+}
+
+.physics-diagram .physics-branches::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(25% - 6px);
+    right: calc(25% - 6px);
+    border-top: 1px solid var(--accent);
+}
+
+.physics-diagram .physics-branch::before {
+    content: "";
+    display: block;
+    height: 24px;
+    width: 1px;
+    margin: 0 auto;
+    background: var(--accent);
+}
+
+.physics-diagram .physics-node small {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.physics-diagram figcaption {
+    margin-top: 18px;
+    line-height: 1.6;
+}
+
+@media (max-width: 420px) {
+    .physics-diagram .physics-node {
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+    .physics-diagram .physics-node small {
+        font-size: 11px;
+    }
+}
+
+.physics-expanded .physics-leaves {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    position: relative;
+}
+
+.physics-expanded .physics-leaves::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(25% - 3px);
+    right: calc(25% - 3px);
+    border-top: 1px solid var(--accent);
+}
+
+.physics-expanded .physics-leaf::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 20px;
+    margin: 0 auto;
+    background: var(--accent);
+}
+
+.physics-expanded .physics-leaves .physics-node {
+    padding: 12px 8px;
+    font-size: 12px;
+}
+
+@media (max-width: 520px) {
+    .physics-expanded .physics-branches {
+        gap: 16px;
+    }
+    .physics-expanded .physics-branches::before {
+        left: calc(25% - 4px);
+        right: calc(25% - 4px);
+    }
+    .physics-expanded .physics-node {
+        padding: 12px 6px;
+        font-size: 12px;
+    }
+    .physics-expanded .physics-descendants > .physics-trunk {
+        display: none;
+    }
+    .physics-expanded .physics-leaves {
+        display: block;
+        margin-left: 12px;
+        padding-left: 12px;
+        border-left: 1px solid var(--accent);
+    }
+    .physics-expanded .physics-leaves::before {
+        display: none;
+    }
+    .physics-expanded .physics-leaf {
+        position: relative;
+        padding-top: 12px;
+    }
+    .physics-expanded .physics-leaf::before {
+        position: absolute;
+        left: -12px;
+        top: calc(50% + 6px);
+        width: 12px;
+        height: 1px;
+    }
+    .physics-expanded .physics-leaves .physics-node {
+        padding: 10px 4px;
+        font-size: 11px;
+    }
+}

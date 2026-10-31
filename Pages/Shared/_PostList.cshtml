@@ -1,0 +1,20 @@
+@model IEnumerable<Post>
+@foreach (IGrouping<int, Post> year in Model.GroupBy(post => post.Date.Year))
+{
+    <div class="year"><h3>@year.Key</h3>
+        <ol>
+            @foreach (Post post in year)
+            {
+                <li><a class="row" href="@post.Url">
+                        <time class="mono" datetime="@post.Date.ToString("O")">@post.Date.ToString("MMM dd", CultureInfo.InvariantCulture)</time>
+                        <span class="row-main"><span class="row-title">@post.Title</span>
+                            @if (post.Tags.Length > 0)
+                            {
+                                <span class="mono">@string.Join(" / ", post.Tags)</span>
+                            }</span>
+                        <span aria-hidden="true" class="row-arrow">↗</span>
+                    </a></li>
+            }
+        </ol>
+    </div>
+}

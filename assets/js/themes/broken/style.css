@@ -1,0 +1,537 @@
+/* Type broken: a building that has passed absolutely no inspections. */
+:root.theme-broken {
+    --bg: #191814;
+    --surface: #25231d;
+    --surface-2: #302d24;
+    --heading: #e8dfc7;
+    --text: #ded5bd;
+    --body: #ccc2aa;
+    --sub: #b7ad94;
+    --muted: #ada38b;
+    --faint: #a69c84;
+    --accent: #e2b95f;
+    --line: #59513f;
+    --line-2: #454032;
+    --line-3: #39352b;
+    --hover-line: #9c8659;
+}
+
+.theme-broken body {
+    background-image: repeating-linear-gradient(4deg, transparent 0 89px, #a8926410 90px, transparent 92px), radial-gradient(ellipse at 15% 10%, #72614020, transparent 60%);
+    isolation: isolate;
+}
+
+.theme-broken :is(main, .site-header, .site-footer) {
+    position: relative;
+    z-index: 1;
+}
+.theme-broken .site-header {
+    border-bottom: 2px dashed #63563c;
+}
+.theme-broken .wordmark-icon {
+    rotate: -8deg;
+    border-style: dashed;
+    box-shadow: 3px 3px 0 #0006;
+}
+.theme-broken .hero h1 {
+    text-shadow: 2px 3px 0 #0008;
+}
+.theme-broken .site-footer {
+    border-top-style: dashed;
+}
+
+.theme-broken .broken-box {
+    position: relative;
+    border: 1px solid #76684b;
+    border-radius: 3px 8px 2px 5px;
+    background-color: var(--surface);
+    background-image: radial-gradient(ellipse at 100% 0, #b59b5720, transparent 45%), repeating-linear-gradient(111deg, transparent 0 31px, #00000008 32px 33px);
+    box-shadow:
+        3px 5px 0 #08080699,
+        inset 0 0 22px #00000025;
+}
+
+.theme-broken .broken-box:nth-child(3n) {
+    border-bottom-style: dashed;
+}
+.theme-broken .broken-chipped {
+    border-top-color: #9a8560;
+}
+.broken-box > :is(.broken-corner, .broken-bandage, .broken-tape, .broken-repair-note) {
+    position: absolute;
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+}
+
+.broken-corner {
+    width: 27px;
+    height: 29px;
+    background: var(--bg);
+    filter: drop-shadow(-1px 2px 0 #b4a07a);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 73% 83%, 69% 61%, 44% 65%, 41% 35%, 22% 39%);
+}
+.broken-corner-top-right {
+    top: -2px;
+    right: -2px;
+}
+.broken-corner-top-left {
+    top: -2px;
+    left: -2px;
+    scale: -1 1;
+}
+.broken-corner-bottom-right {
+    bottom: -2px;
+    right: -2px;
+    scale: 1 -1;
+}
+.broken-corner-bottom-left {
+    bottom: -2px;
+    left: -2px;
+    scale: -1 -1;
+}
+
+.broken-heading-word {
+    display: inline-block;
+    transform-origin: 95% 10%;
+    animation: broken-heading-fall 2300ms 700ms linear forwards;
+}
+@keyframes broken-heading-fall {
+    /* Snap loose, then swing around the last attached corner with diminishing momentum. */
+    0% {
+        transform: translate(0, 0) rotate(0);
+        opacity: 1;
+        animation-timing-function: steps(1, end);
+    }
+    2% {
+        transform: translate(0, 5px) rotate(-9deg);
+        animation-timing-function: ease-in-out;
+    }
+    15% {
+        transform: translate(0, 5px) rotate(-18deg);
+        animation-timing-function: ease-in-out;
+    }
+    28% {
+        transform: translate(0, 5px) rotate(-11deg);
+        animation-timing-function: ease-in-out;
+    }
+    40% {
+        transform: translate(0, 5px) rotate(-15deg);
+        animation-timing-function: ease-in-out;
+    }
+    46% {
+        transform: translate(0, 5px) rotate(-14deg);
+        animation-timing-function: linear;
+    }
+    /* Release: accelerating descent, a little sideways drift, and a continuous tumble. */
+    57% {
+        transform: translate(5px, calc(5px + 5vh)) rotate(-4deg);
+        opacity: 1;
+    }
+    68% {
+        transform: translate(11px, calc(5px + 19vh)) rotate(12deg);
+        opacity: 1;
+    }
+    79% {
+        transform: translate(18px, calc(5px + 44vh)) rotate(34deg);
+        opacity: 1;
+    }
+    90% {
+        transform: translate(26px, calc(5px + 78vh)) rotate(60deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(34px, calc(5px + 118vh)) rotate(88deg);
+        opacity: 0;
+    }
+}
+
+.broken-bandage {
+    top: -9px;
+    right: 34px;
+    width: 70px;
+    height: 23px;
+    rotate: var(--repair-angle);
+    border: 1px solid #b99465;
+    border-radius: 8px;
+    background:
+        radial-gradient(circle, #8d6c4666 1px, transparent 1.5px) 0 0 / 6px 6px,
+        #cba878;
+    box-shadow:
+        1px 2px 3px #0007,
+        inset 0 1px #efce9c;
+}
+.broken-bandage::after {
+    content: "";
+    position: absolute;
+    inset: 3px 23px;
+    border: 1px solid #a88454;
+    border-radius: 2px;
+    background: repeating-linear-gradient(0deg, #ddbd8e 0 2px, #c5a474 2px 3px);
+}
+.broken-tape {
+    top: -10px;
+    left: 20px;
+    width: 61px;
+    height: 25px;
+    rotate: var(--repair-angle);
+    background: repeating-linear-gradient(90deg, #c4b37a80 0 3px, #c4b37a99 3px 5px);
+    clip-path: polygon(2% 0, 98% 4%, 95% 18%, 100% 30%, 96% 45%, 100% 64%, 96% 80%, 99% 100%, 0 95%, 4% 76%, 0 57%, 3% 38%, 0 20%);
+}
+.broken-repair-note {
+    right: 16px;
+    bottom: -9px;
+    padding: 0 6px;
+    color: #c3ae7c;
+    background: #29261e;
+    font: 10px/1.6 var(--mono);
+    rotate: -4deg;
+    border-bottom: 1px dashed #7d6d49;
+}
+
+.broken-world {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.broken-notice {
+    position: absolute;
+    right: -34px;
+    top: 48%;
+    width: 180px;
+    padding: 7px 20px;
+    rotate: -83deg;
+    color: #b5a170;
+    border-block: 3px solid #a58a47;
+    background: #252118;
+    font: 9px/1.4 var(--mono);
+    text-align: center;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+}
+.broken-wall-crack {
+    position: absolute;
+    left: 2%;
+    top: 21%;
+    width: 54px;
+    height: 200px;
+    background: #080806;
+    clip-path: polygon(45% 0, 50% 29%, 85% 36%, 61% 52%, 75% 77%, 36% 100%, 68% 76%, 55% 51%, 77% 37%, 43% 31%);
+}
+.broken-floor {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: repeating-linear-gradient(100deg, transparent 0 71px, #7c6c4d 72px 75px, transparent 78px 123px, #4d4535 125px 131px);
+    opacity: 0.6;
+}
+.broken-rat {
+    position: absolute;
+    left: 0;
+    bottom: 7px;
+    width: 116px;
+    height: 54px;
+}
+.broken-rat svg {
+    overflow: visible;
+}
+.broken-rat-body {
+    animation: broken-scurry 160ms ease-in-out infinite alternate;
+    transform-origin: 70px 42px;
+}
+.broken-rat-feet {
+    animation: broken-feet 160ms steps(2) infinite;
+    transform-origin: 70px 42px;
+}
+.broken-rat-tail {
+    animation: broken-tail 500ms ease-in-out infinite alternate;
+    transform-origin: 40px 37px;
+}
+.broken-rat.is-sniffing .broken-rat-body {
+    animation: broken-sniff 800ms ease-in-out infinite alternate;
+}
+.broken-rat.is-sniffing .broken-rat-feet {
+    animation: none;
+}
+.broken-debris {
+    position: fixed;
+    width: 9px;
+    height: 12px;
+    background: #a18d65;
+    border-right: 2px solid #60533d;
+    clip-path: polygon(10% 0, 100% 20%, 72% 100%, 0 65%);
+    animation: broken-fall 1400ms ease-in forwards;
+}
+@keyframes broken-fall {
+    from {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0);
+    }
+    to {
+        opacity: 0;
+        transform: translate(var(--drift), 160px) rotate(var(--spin));
+    }
+}
+@keyframes broken-scurry {
+    to {
+        transform: translateY(-1.5px);
+    }
+}
+@keyframes broken-feet {
+    to {
+        transform: skewX(20deg);
+    }
+}
+@keyframes broken-tail {
+    to {
+        transform: rotate(-8deg);
+    }
+}
+@keyframes broken-sniff {
+    to {
+        transform: rotate(-3deg);
+    }
+}
+@media (max-width: 700px) {
+    .broken-notice {
+        display: none;
+    }
+    .broken-bandage {
+        width: 58px;
+        right: 26px;
+    }
+    .broken-bandage::after {
+        left: 18px;
+        right: 18px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .broken-world *,
+    .broken-world *::before,
+    .broken-world *::after {
+        animation: none !important;
+    }
+    .broken-debris {
+        display: none;
+    }
+    .broken-heading-word {
+        animation: none;
+    }
+}
+@media print {
+    .broken-world,
+    .broken-corner,
+    .broken-bandage,
+    .broken-tape,
+    .broken-repair-note {
+        display: none !important;
+    }
+    .theme-broken .broken-box {
+        box-shadow: none;
+        background-image: none;
+    }
+    .broken-heading-word {
+        animation: none;
+    }
+}
+
+/* An entirely unqualified flying repair crew. The invisible original reserves the word's width. */
+.broken-heading-slot {
+    position: relative;
+    display: inline-block;
+}
+.broken-heading-patch {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    font-size: 0.87em;
+    letter-spacing: -0.09em;
+    line-height: 1.1;
+    rotate: 3deg;
+}
+.broken-heading-patch > span {
+    display: inline-block;
+    color: #dbca9b;
+    background: #3a382e;
+    border: 1px dashed #b39a62;
+    box-shadow: 1px 2px 0 #0007;
+    padding: 0 0.035em;
+    --seat-y: 5px;
+    --seat-angle: -8deg;
+    transform: translateY(var(--seat-y)) rotate(var(--seat-angle));
+    font-family: Georgia, serif;
+}
+.broken-heading-patch > span:nth-child(2) {
+    --seat-y: 1px;
+    --seat-angle: 9deg;
+    color: #c5bba5;
+    font-family: var(--mono);
+}
+.broken-heading-patch > span:nth-child(3) {
+    --seat-y: 7px;
+    --seat-angle: -5deg;
+    color: #e1b86a;
+}
+.broken-heading-patch.is-complete::after {
+    content: "";
+    position: absolute;
+    left: 25%;
+    bottom: -5px;
+    width: 60%;
+    height: 7px;
+    background: #c3ad7099;
+    rotate: -12deg;
+}
+.broken-repair-robot {
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    width: 100px;
+    height: 90px;
+    z-index: 5;
+    pointer-events: none;
+    animation: broken-robot-visit 16800ms linear forwards;
+    translate: var(--repair-step, 0px) 0;
+    transition: translate 650ms ease-in-out;
+}
+.broken-repair-robot svg {
+    display: block;
+    overflow: visible;
+}
+.broken-robot-cargo {
+    position: absolute;
+    top: -17px;
+    left: 7px;
+    font:
+        bold 20px/1 Georgia,
+        serif;
+    color: #ddc78c;
+    border: 1px dashed #a88c53;
+    background: #353127;
+    padding: 2px 6px;
+    rotate: -8deg;
+}
+.broken-robot-flame {
+    transform-origin: 50px 68px;
+    animation: broken-robot-thrust 180ms ease-in-out infinite alternate;
+}
+.broken-robot-sparks {
+    display: none;
+    position: absolute;
+    top: -6px;
+    right: 5px;
+    font: 22px/1 var(--sans);
+    color: #f2d58b;
+}
+.broken-repair-robot.is-working .broken-robot-tool {
+    transform-origin: 73px 41px;
+    animation: broken-robot-wrench 300ms ease-in-out infinite alternate;
+}
+.broken-repair-robot.is-working .broken-robot-sparks {
+    display: block;
+    animation: broken-robot-thrust 240ms ease-in-out infinite alternate;
+}
+.broken-repair-robot.is-delivered .broken-robot-cargo {
+    visibility: hidden;
+}
+.broken-heading-paused,
+.broken-heading-paused * {
+    animation-play-state: paused !important;
+}
+@keyframes broken-robot-visit {
+    0% {
+        transform: translate(80px, 100vh) rotate(-12deg);
+        animation-timing-function: ease-out;
+    }
+    20.833333% {
+        transform: translate(0, 0) rotate(0);
+    }
+    /* Stay still while fitting letters and during the two-second verdict. */
+    79.166667% {
+        transform: translate(0, 0) rotate(0);
+        animation-timing-function: ease-in;
+    }
+    100% {
+        transform: translate(80px, 100vh) rotate(15deg);
+    }
+}
+.broken-heading-patch > .is-being-fitted {
+    animation: broken-letter-fit 2600ms ease-in-out;
+}
+@keyframes broken-letter-fit {
+    0% {
+        transform: translate(-8px, 38px) rotate(-24deg);
+    }
+    22% {
+        transform: translate(0, -3px) rotate(0);
+    }
+    36% {
+        transform: translate(3px, 7px) rotate(15deg);
+    }
+    52% {
+        transform: translate(-2px, -1px) rotate(-5deg);
+    }
+    67% {
+        transform: translate(0, 1px) rotate(0);
+    }
+    82%,
+    100% {
+        transform: translateY(var(--seat-y)) rotate(var(--seat-angle));
+    }
+}
+.broken-robot-verdict {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 85px;
+    padding: 5px 8px;
+    border: 1px solid #8d825f;
+    background: #29271f;
+    color: #dbca9b;
+    font: 11px/1.3 var(--mono);
+    letter-spacing: 0;
+    white-space: nowrap;
+    rotate: -5deg;
+}
+.broken-repair-robot.is-speaking .broken-robot-verdict {
+    display: block;
+}
+@keyframes broken-robot-thrust {
+    to {
+        transform: scaleY(0.65);
+        opacity: 0.65;
+    }
+}
+@keyframes broken-robot-wrench {
+    to {
+        transform: rotate(-18deg);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .broken-repair-robot {
+        display: none;
+    }
+    .broken-heading-patch > .is-being-fitted {
+        animation: none;
+    }
+}
+@media print {
+    .broken-repair-robot,
+    .broken-heading-patch {
+        display: none;
+    }
+    .broken-heading-word {
+        visibility: visible !important;
+    }
+}
+
+.title-static .cursor {
+    animation: none;
+    opacity: 0;
+}

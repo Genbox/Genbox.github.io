@@ -1,0 +1,40 @@
+/* Settled snow remains visible with reduced motion and never changes box layout. */
+.christmas-snowcaps :is(.card, .panel, .toc, .series, .adj, .chart) {
+    position: relative;
+}
+
+.christmas-snowcaps :is(.card, .panel, .toc, .series, .adj, .chart)::before {
+    content: "";
+    position: absolute;
+    inset: -9px -1px auto;
+    height: 21px;
+    background: var(--snowcap, url("../../../images/themes/snow-cap.svg")) left top / 400px 21px repeat-x;
+    border-radius: 12px 12px 0 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.christmas-snowcaps :is(.card, .panel, .toc, .series, .adj, .chart):nth-child(even)::before {
+    transform: scaleX(-1);
+}
+
+@media print {
+    .christmas-snowcaps :is(.card, .panel, .toc, .series, .adj, .chart)::before {
+        display: none;
+    }
+}
+
+.snowfall {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 900;
+}
+
+@media print, (prefers-reduced-motion: reduce) {
+    .snowfall {
+        display: none;
+    }
+}

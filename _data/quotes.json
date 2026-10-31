@@ -1,0 +1,341 @@
+[
+  {
+    "text": "The first principle is that you must not fool yourself, and you are the easiest person to fool.",
+    "author": "Richard Feynman",
+    "role": "Physicist",
+    "source": "Cargo Cult Science, 1974"
+  },
+  {
+    "text": "He who has a why to live can bear almost any how.",
+    "author": "Friedrich Nietzsche",
+    "role": "Philosopher",
+    "source": "Twilight of the Idols, 1889"
+  },
+  {
+    "text": "Optimism is an occupational hazard of programming; feedback is the treatment.",
+    "author": "Kent Beck",
+    "role": "Software engineer",
+    "source": "Extreme Programming Explained, 1999"
+  },
+  {
+    "text": "Anyone, from the most clueless amateur to the best cryptographer, can create an algorithm that he himself can't break.",
+    "author": "Bruce Schneier",
+    "role": "Cryptographer",
+    "source": "Crypto-Gram, 1998"
+  },
+  {
+    "text": "Beware of bugs in the above code; I have only proved it correct, not tried it.",
+    "author": "Donald Knuth",
+    "role": "Computer scientist",
+    "source": "Memo to Peter van Emde Boas, 1977"
+  },
+  {
+    "text": "Life is short, and art long, opportunity fleeting, experiment treacherous, judgment difficult.",
+    "author": "Hippocrates",
+    "role": "Physician",
+    "source": "Aphorisms"
+  },
+  {
+    "text": "The fundamental cause of the trouble is that in the modern world the stupid are cocksure while the intelligent are full of doubt.",
+    "author": "Bertrand Russell",
+    "role": "Philosopher and mathematician",
+    "source": "The Triumph of Stupidity, 1933"
+  },
+  {
+    "text": "I think, therefore I am.",
+    "author": "René Descartes",
+    "role": "Philosopher",
+    "source": "Discourse on the Method, 1637"
+  },
+  {
+    "text": "Bad programmers worry about the code. Good programmers worry about data structures and their relationships.",
+    "author": "Linus Torvalds",
+    "role": "Software engineer",
+    "source": "Git mailing list, 2006"
+  },
+  {
+    "text": "Our knowledge can only be finite, while our ignorance must necessarily be infinite.",
+    "author": "Karl Popper",
+    "role": "Philosopher",
+    "source": "Conjectures and Refutations, 1963"
+  },
+  {
+    "text": "Make it work, make it right, make it fast.",
+    "author": "Kent Beck",
+    "role": "Software engineer"
+  },
+  {
+    "text": "Men are disturbed not by things, but by the views which they take of things.",
+    "author": "Epictetus",
+    "role": "Philosopher",
+    "source": "Enchiridion"
+  },
+  {
+    "text": "Man is condemned to be free.",
+    "author": "Jean-Paul Sartre",
+    "role": "Philosopher",
+    "source": "Existentialism Is a Humanism, 1946"
+  },
+  {
+    "text": "The question of whether a computer can think is no more interesting than the question of whether a submarine can swim.",
+    "author": "Edsger W. Dijkstra",
+    "role": "Computer scientist",
+    "source": "EWD898, 1984"
+  },
+  {
+    "text": "Medicine is a science of uncertainty and an art of probability.",
+    "author": "William Osler",
+    "role": "Physician"
+  },
+  {
+    "text": "The enemy knows the system.",
+    "author": "Claude Shannon",
+    "role": "Mathematician",
+    "source": "Communication Theory of Secrecy Systems, 1949"
+  },
+  {
+    "text": "As to diseases, make a habit of two things: to help, or at least to do no harm.",
+    "author": "Hippocrates",
+    "role": "Physician",
+    "source": "Epidemics"
+  },
+  {
+    "text": "Two things fill the mind with ever new and increasing admiration and awe: the starry heavens above me and the moral law within me.",
+    "author": "Immanuel Kant",
+    "role": "Philosopher",
+    "source": "Critique of Practical Reason, 1788"
+  },
+  {
+    "text": "Talk is cheap. Show me the code.",
+    "author": "Linus Torvalds",
+    "role": "Software engineer",
+    "source": "Linux kernel mailing list, 2000"
+  },
+  {
+    "text": "The impediment to action advances action. What stands in the way becomes the way.",
+    "author": "Marcus Aurelius",
+    "role": "Emperor and philosopher",
+    "source": "Meditations"
+  },
+  {
+    "text": "There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies.",
+    "author": "C. A. R. Hoare",
+    "role": "Computer scientist",
+    "source": "The Emperor's Old Clothes, 1980"
+  },
+  {
+    "text": "The best way to predict the future is to invent it.",
+    "author": "Alan Kay",
+    "role": "Computer scientist",
+    "source": "Xerox PARC meeting, 1971"
+  },
+  {
+    "text": "The good physician treats the disease; the great physician treats the patient who has the disease.",
+    "author": "William Osler",
+    "role": "Physician"
+  },
+  {
+    "text": "What I cannot create, I do not understand.",
+    "author": "Richard Feynman",
+    "role": "Physicist",
+    "source": "Blackboard at Caltech, 1988"
+  },
+  {
+    "text": "When in doubt, use brute force.",
+    "author": "Ken Thompson",
+    "role": "Computer scientist"
+  },
+  {
+    "text": "A language that doesn't affect the way you think about programming is not worth knowing.",
+    "author": "Alan Perlis",
+    "role": "Computer scientist",
+    "source": "Epigrams on Programming, 1982"
+  },
+  {
+    "text": "Well, the people, I would say. There is no patent. Could you patent the sun?",
+    "author": "Jonas Salk",
+    "role": "Virologist",
+    "source": "Interview with Edward R. Murrow, 1955"
+  },
+  {
+    "text": "The unexamined life is not worth living.",
+    "author": "Socrates",
+    "role": "Philosopher",
+    "source": "Plato, Apology"
+  },
+  {
+    "text": "Security is a process, not a product.",
+    "author": "Bruce Schneier",
+    "role": "Cryptographer",
+    "source": "Crypto-Gram, 2000"
+  },
+  {
+    "text": "Nothing in life is to be feared, it is only to be understood.",
+    "author": "Marie Curie",
+    "role": "Physicist and chemist"
+  },
+  {
+    "text": "It's easier to ask forgiveness than it is to get permission.",
+    "author": "Grace Hopper",
+    "role": "Computer scientist"
+  },
+  {
+    "text": "If I have seen further it is by standing on the shoulders of Giants.",
+    "author": "Isaac Newton",
+    "role": "Physicist and mathematician",
+    "source": "Letter to Robert Hooke, 1675"
+  },
+  {
+    "text": "Programs must be written for people to read, and only incidentally for machines to execute.",
+    "author": "Harold Abelson and Gerald Jay Sussman",
+    "role": "Computer scientists",
+    "source": "Structure and Interpretation of Computer Programs, 1985"
+  },
+  {
+    "text": "Simplicity is prerequisite for reliability.",
+    "author": "Edsger W. Dijkstra",
+    "role": "Computer scientist",
+    "source": "EWD498, 1975"
+  },
+  {
+    "text": "Data dominates. If you've chosen the right data structures and organized things well, the algorithms will almost always be self-evident.",
+    "author": "Rob Pike",
+    "role": "Computer scientist",
+    "source": "Notes on Programming in C, 1989"
+  },
+  {
+    "text": "Science knows no country, because knowledge belongs to humanity, and is the torch which illuminates the world.",
+    "author": "Louis Pasteur",
+    "role": "Microbiologist",
+    "source": "Toast in Milan, 1876"
+  },
+  {
+    "text": "Whereof one cannot speak, thereof one must be silent.",
+    "author": "Ludwig Wittgenstein",
+    "role": "Philosopher",
+    "source": "Tractatus Logico-Philosophicus, 1921"
+  },
+  {
+    "text": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    "author": "Martin Fowler",
+    "role": "Software engineer",
+    "source": "Refactoring, 1999"
+  },
+  {
+    "text": "It always takes longer than you expect, even when you take into account Hofstadter's Law.",
+    "author": "Douglas Hofstadter",
+    "role": "Cognitive scientist",
+    "source": "Gödel, Escher, Bach, 1979"
+  },
+  {
+    "text": "Controlling complexity is the essence of computer programming.",
+    "author": "Brian Kernighan",
+    "role": "Computer scientist",
+    "source": "Software Tools, 1976"
+  },
+  {
+    "text": "The Analytical Engine weaves algebraical patterns just as the Jacquard loom weaves flowers and leaves.",
+    "author": "Ada Lovelace",
+    "role": "Mathematician",
+    "source": "Notes on the Analytical Engine, 1843"
+  },
+  {
+    "text": "Program testing can be used to show the presence of bugs, but never to show their absence!",
+    "author": "Edsger W. Dijkstra",
+    "role": "Computer scientist",
+    "source": "Notes on Structured Programming, 1970"
+  },
+  {
+    "text": "Nothing in biology makes sense except in the light of evolution.",
+    "author": "Theodosius Dobzhansky",
+    "role": "Geneticist",
+    "source": "Essay title, 1973"
+  },
+  {
+    "text": "In the fields of observation chance favors only the prepared mind.",
+    "author": "Louis Pasteur",
+    "role": "Microbiologist",
+    "source": "Lecture at Lille, 1854"
+  },
+  {
+    "text": "While we are postponing, life speeds by.",
+    "author": "Seneca",
+    "role": "Philosopher",
+    "source": "Letters to Lucilius"
+  },
+  {
+    "text": "We can only see a short distance ahead, but we can see plenty there that needs to be done.",
+    "author": "Alan Turing",
+    "role": "Mathematician and computer scientist",
+    "source": "Computing Machinery and Intelligence, 1950"
+  },
+  {
+    "text": "It may seem a strange principle to enunciate as the very first requirement in a Hospital that it should do the sick no harm.",
+    "author": "Florence Nightingale",
+    "role": "Nurse and statistician",
+    "source": "Notes on Hospitals, 1863"
+  },
+  {
+    "text": "Extraordinary claims require extraordinary evidence.",
+    "author": "Carl Sagan",
+    "role": "Astronomer",
+    "source": "Cosmos, 1980"
+  },
+  {
+    "text": "Wherever the art of medicine is loved, there is also a love of humanity.",
+    "author": "Hippocrates",
+    "role": "Physician",
+    "source": "Precepts"
+  },
+  {
+    "text": "The cheapest, fastest, and most reliable components are those that aren't there.",
+    "author": "Gordon Bell",
+    "role": "Computer engineer"
+  },
+  {
+    "text": "Premature optimization is the root of all evil.",
+    "author": "Donald Knuth",
+    "role": "Computer scientist",
+    "source": "Computer Programming as an Art, 1974"
+  },
+  {
+    "text": "The limits of my language mean the limits of my world.",
+    "author": "Ludwig Wittgenstein",
+    "role": "Philosopher",
+    "source": "Tractatus Logico-Philosophicus, 1921"
+  },
+  {
+    "text": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
+    "author": "Brian Kernighan",
+    "role": "Computer scientist",
+    "source": "The Elements of Programming Style, 1974"
+  },
+  {
+    "text": "Adding manpower to a late software project makes it later.",
+    "author": "Fred Brooks",
+    "role": "Computer scientist",
+    "source": "The Mythical Man-Month, 1975"
+  },
+  {
+    "text": "There are only two hard things in Computer Science: cache invalidation and naming things.",
+    "author": "Phil Karlton",
+    "role": "Software engineer"
+  },
+  {
+    "text": "Simplicity does not precede complexity, but follows it.",
+    "author": "Alan Perlis",
+    "role": "Computer scientist",
+    "source": "Epigrams on Programming, 1982"
+  },
+  {
+    "text": "One sometimes finds what one is not looking for.",
+    "author": "Alexander Fleming",
+    "role": "Physician and microbiologist"
+  },
+  {
+    "text": "Any sufficiently advanced technology is indistinguishable from magic.",
+    "author": "Arthur C. Clarke",
+    "role": "Writer",
+    "source": "Profiles of the Future, 1973 edition"
+  }
+]

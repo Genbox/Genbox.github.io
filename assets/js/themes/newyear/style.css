@@ -1,0 +1,65 @@
+/* Champagne-gold ribbon, scattered confetti and glints for New Year. */
+.theme-newyear :is(.card, .panel, .toc, .series, .adj, .chart) {
+    position: relative;
+}
+
+.theme-newyear :is(.card, .panel, .toc, .series, .adj, .chart)::before,
+.theme-newyear :is(.card, .panel, .toc, .series, .adj, .chart)::after {
+    content: "";
+    position: absolute;
+    inset: -15px -1px auto;
+    height: 32px;
+    pointer-events: none;
+    z-index: 1;
+    background:
+        var(--newyear-confetti, url("../../../images/themes/newyear-trim.svg")) left top / 400px 32px repeat-x,
+        url("../../../images/themes/newyear-ribbon.svg") center / 100% 100% no-repeat;
+}
+
+.theme-newyear :is(.card, .panel, .toc, .series, .adj, .chart)::after {
+    top: -22px;
+    height: 38px;
+    background: var(--newyear-sparks, url("../../../images/themes/newyear-sparks.svg")) left top / 400px 38px repeat-x;
+    animation: newyear-trim-twinkle var(--newyear-twinkle-duration, 3.6s) ease-in-out infinite alternate;
+    animation-delay: var(--newyear-twinkle-delay, 0s);
+}
+
+@keyframes newyear-trim-twinkle {
+    0%,
+    15% {
+        opacity: 0.25;
+    }
+    65%,
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .theme-newyear :is(.card, .panel, .toc, .series, .adj, .chart)::after {
+        animation: none;
+        opacity: 0.85;
+    }
+}
+
+@media print {
+    .theme-newyear :is(.card, .panel, .toc, .series, .adj, .chart)::before,
+    .theme-newyear :is(.card, .panel, .toc, .series, .adj, .chart)::after {
+        display: none;
+    }
+}
+
+.new-year img {
+    display: block;
+    width: 160px;
+    height: 140px;
+}
+
+.new-year-number {
+    display: block;
+}
+
+.new-year-number svg {
+    display: block;
+    margin: 0 auto;
+}

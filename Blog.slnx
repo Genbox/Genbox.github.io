@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Misc/">
+    <File Path=".github/workflows/pages.yml" />
+  </Folder>
+  <Project Path="Blog.csproj" />
+</Solution>

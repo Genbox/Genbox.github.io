@@ -1,0 +1,40 @@
+[
+  {
+    "id": "function-approximations",
+    "title": "Function Approximations",
+    "parts": [
+      "/2009/08/accuracy-of-function-approximations.html",
+      "/2009/08/accuracy-and-speed-of-function.html",
+      "/2009/08/accuracy-and-speed-of-function_09.html"
+    ]
+  },
+  {
+    "id": "performance-tips",
+    "title": "Performance Tips and Tricks",
+    "overview": "/2010/01/performance-tips-and-tricks-series.html",
+    "parts": [
+      "/2009/08/performance-tips-and-tricks-part-1.html",
+      "/2009/08/performance-tips-and-tricks-part-2.html",
+      "/2009/08/performance-tips-and-tricks-part-3.html",
+      "/2009/09/performance-tips-and-tricks-part-4.html"
+    ]
+  },
+  {
+    "id": "physics-engine",
+    "title": "2D Physics Engine Tutorial",
+    "overview": "/2010/02/physics-engine-series.html",
+    "parts": [
+      "/2009/09/2d-physics-engine-tutorial-part-1.html",
+      "/2009/09/2d-physics-engine-tutorial-part-2.html",
+      "/2009/09/2d-physics-engine-tutorial-part-3.html"
+    ]
+  },
+  {
+    "id": "xbox-performance",
+    "title": "Optimizing Performance on the Xbox 360",
+    "parts": [
+      "/2010/11/optimizing-performance-for-xbox-360.html",
+      "/2010/11/optimizing-performance-on-xbox-360-part.html"
+    ]
+  }
+]

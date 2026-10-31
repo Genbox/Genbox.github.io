@@ -1,0 +1,34 @@
+@page "/topics/"
+@{
+    ViewData["Title"] = "Topics";
+    ViewData["Styles"] = new[] { "topics.css" };
+    Topic[] topics = Site.Topics.OrderByDescending(topic => topic.Count).ToArray();
+}
+<header class="page-header"><p class="label label-accent">// explore the articles</p>
+    <h1>Topics</h1></header>
+<ul aria-label="All topics" class="chips">
+    @foreach (Topic topic in topics)
+    {
+        <li><a class="chip" href="@topic.Url"><span>@topic.Name</span><span class="mono">@topic.Count</span></a></li>
+    }
+</ul>
+<div class="topic-sections">
+    @foreach (Topic topic in topics)
+    {
+        <section aria-labelledby="@(topic.Slug)-heading" class="topic-section" id="@SiteCatalog.Slug(topic.Name)">
+            <div class="section-heading"><h2 id="@(topic.Slug)-heading">@topic.Name</h2><span class="mono">@topic.Count @(topic.Count == 1 ? "article" : "articles")</span></div>
+            <ul>
+                @foreach (Post post in Site.PostsForTopic(topic.Name).Take(4))
+                {
+                    <li><a class="topic-post" href="@post.Url"><span>@post.Title</span>
+                            <time class="mono" datetime="@post.Date.ToString("O")">@post.Date.ToString("yyyy-MM-dd")</time>
+                        </a></li>
+                }
+            </ul>
+            @if (topic.Count > 4)
+            {
+                <a class="more-link" href="@topic.Url">All @topic.Count @topic.Name articles →</a>
+            }
+        </section>
+    }
+</div>

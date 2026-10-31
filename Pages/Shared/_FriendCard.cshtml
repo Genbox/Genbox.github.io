@@ -1,0 +1,10 @@
+@model Friend
+<a class="card friend-card" href="@Model.Url" rel="noopener" target="_blank">
+    <h3 class="card-title">@Model.Name <span aria-hidden="true" class="friend-arrow">↗</span></h3>
+    <span class="mono friend-domain">@(new Uri(Model.Url).Host)</span>
+    @if (!string.IsNullOrEmpty(Model.Description))
+    {
+        <p class="card-text">@Model.Description</p>
+    }
+    <partial name="_FriendTags" model="Model.Tags"/>
+</a>

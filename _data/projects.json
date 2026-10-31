@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Performance & Data Structures",
+    "repos": [
+      "FastData",
+      "FastPerfectHash",
+      "FastEnum",
+      "FastHash",
+      "FastFilter"
+    ]
+  },
+  {
+    "name": "Security",
+    "repos": [
+      "VirusTotalNet",
+      "VirusTotalContextMenu",
+      "FastCodeSign",
+      "NovaDetect"
+    ]
+  },
+  {
+    "name": "APIs & Libraries",
+    "repos": [
+      "SimpleS3",
+      "WolframAlpha",
+      "Wikipedia",
+      "GoogleTranslateNet",
+      "HttpBuilders",
+      "GitLabSourceLink"
+    ]
+  },
+  {
+    "name": "Physics",
+    "repos": [
+      "VelcroPhysics"
+    ]
+  },
+  {
+    "name": "Tools & Archives",
+    "repos": [
+      "FindDupes",
+      "gperf-archive"
+    ]
+  }
+]

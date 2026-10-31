@@ -1,0 +1,157 @@
+.prose .vector-diagram {
+    padding: 18px;
+    max-width: 660px;
+    break-inside: avoid;
+}
+
+.prose .vector-diagram.vector-geometry {
+    max-width: 420px;
+}
+
+.vector-diagram .scene {
+    fill: var(--surface-2);
+}
+
+.vector-diagram .polygon {
+    fill: #f0c45e;
+    stroke: #13161b;
+    stroke-width: 2;
+}
+
+.vector-diagram .circle {
+    fill: #e7e9ec;
+    stroke: #13161b;
+    stroke-width: 2;
+}
+
+.vector-diagram .bounds {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    stroke-dasharray: 5 3;
+}
+
+.vector-diagram .center {
+    fill: none;
+    stroke: #13161b;
+    stroke-width: 1.5;
+}
+
+.vector-diagram .contact {
+    fill: #ff8191;
+    stroke: #13161b;
+    stroke-width: 1;
+}
+
+.vector-diagram .normal {
+    fill: none;
+    stroke: #6ee7b7;
+    stroke-width: 2.5;
+}
+
+.vector-diagram .distance {
+    stroke: #13161b;
+    stroke-width: 1.2;
+}
+
+.vector-diagram .grid {
+    stroke: var(--line);
+    stroke-width: 1;
+}
+
+.vector-diagram .axis {
+    fill: none;
+    stroke: var(--muted);
+    stroke-width: 1.2;
+}
+
+.vector-diagram .curve {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2.5;
+}
+
+.vector-diagram .secondary {
+    fill: none;
+    stroke: #91baff;
+    stroke-width: 2.5;
+    stroke-dasharray: 6 4;
+}
+
+.vector-diagram .trace {
+    fill: none;
+    stroke: var(--muted);
+    stroke-width: 1.5;
+    stroke-dasharray: 4 4;
+}
+
+.vector-diagram .point {
+    fill: var(--muted);
+}
+
+.vector-diagram .kept {
+    fill: var(--accent);
+    stroke: var(--surface);
+    stroke-width: 1;
+}
+
+.vector-diagram text {
+    fill: var(--body);
+    font: 16px var(--sans);
+}
+
+.vector-diagram .plot-label {
+    fill: var(--text);
+    font-size: 18px;
+}
+
+.vector-diagram figcaption {
+    margin-top: 14px;
+    line-height: 1.6;
+}
+
+.vector-diagram .vector-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-top: 14px;
+    font-size: 13px;
+}
+
+.vector-diagram .legend-primary {
+    color: var(--accent);
+}
+
+.vector-diagram .legend-secondary {
+    color: #91baff;
+}
+
+.vector-diagram .legend-contact {
+    color: #ff8191;
+}
+
+.vector-diagram .rdp-stage + .rdp-stage {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+}
+
+.vector-diagram .rdp-label {
+    color: var(--text);
+    font-size: 13px;
+}
+
+.vector-diagram .rdp-label b {
+    margin-right: 10px;
+    color: var(--accent);
+    font-family: var(--mono);
+}
+
+@media (max-width: 420px) {
+    .prose .vector-diagram {
+        padding: 12px;
+    }
+    .vector-diagram .vector-legend {
+        font-size: 12px;
+    }
+}

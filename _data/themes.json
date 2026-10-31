@@ -1,0 +1,21 @@
+{
+  "christmas": {},
+  "newyear": {},
+  "kawaii": {
+    "color": "#fff5fa"
+  },
+  "winxp": {
+    "folder": "windows",
+    "color": "#245edb"
+  },
+  "win95": {
+    "folder": "windows",
+    "color": "#008080"
+  },
+  "purple": {
+    "color": "#160117"
+  },
+  "broken": {
+    "color": "#191814"
+  }
+}

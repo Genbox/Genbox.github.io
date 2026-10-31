@@ -1,0 +1,79 @@
+@page
+@model PostModel
+@{
+    Post post = Model.Post;
+    string? primary = post.Tags.FirstOrDefault();
+    Post[] related = [];
+    if (primary is not null)
+    {
+        related = Site.PostsForTopic(primary).Where(item => item != post).Take(3).ToArray();
+    }
+}
+<article class="article">
+    <header class="article-header">
+        <a class="back-link" href="/">← All articles</a>
+        <h1>@post.Title</h1>
+        <div class="article-meta">
+            <time datetime="@post.Date.ToString("O")">@post.Date.ToString("MMMM d, yyyy", CultureInfo.InvariantCulture)</time>
+            @if (post.ShowUpdated)
+            {
+                <span aria-hidden="true">·</span>
+                <span class="updated">Updated <time datetime="@(post.Modified!.Value.ToString("O"))">@post.Modified.Value.ToString("MMMM d, yyyy", CultureInfo.InvariantCulture)</time></span>
+            }
+            <span aria-hidden="true">·</span><span>@SiteCatalog.Author</span>
+            <span aria-hidden="true">·</span><span>@post.ReadingMinutes min read</span>
+            @if (post.Tags.Length > 0)
+            {
+                <ul aria-label="Topics" class="tags">
+                    @foreach (string tag in post.Tags)
+                    {
+                        <li><a class="pill" href="@Site.TopicUrl(tag)">@tag</a></li>
+                    }
+                </ul>
+            }
+        </div>
+        @Html.Raw(post.Content.ContentsHtml)
+        @if (Model.Series is not null)
+        {
+            <partial name="_ArticleSeries" model="new SeriesNavigation(post, Model.Series, false)"/>
+        }
+    </header>
+    <div class="prose">@Html.Raw(post.Content.Html)</div>
+    @if (Model.Series is not null)
+    {
+        <partial name="_ArticleSeries" model="new SeriesNavigation(post, Model.Series, true)"/>
+    }
+    @if (related.Length > 0)
+    {
+        <section aria-labelledby="more-in-topic" class="more">
+            <div class="section-heading">
+                <h2 id="more-in-topic">More in @primary</h2>
+                <a href="@Site.TopicUrl(primary!)">All @Site.PostsForTopic(primary!).Count() @primary articles →</a>
+            </div>
+            <div class="card-grid">
+                @foreach (Post item in related)
+                {
+                    <a class="adj" href="@item.Url"><span class="adj-title">@item.Title</span>
+                        <time class="mono" datetime="@item.Date.ToString("O")">@item.Date.ToString("yyyy-MM-dd")</time>
+                    </a>
+                }
+            </div>
+        </section>
+    }
+    <nav aria-label="Adjacent articles" class="post-nav card-grid">
+        @if (Model.Previous is { } previous)
+        {
+            <a class="adj" href="@previous.Url" rel="prev"><span class="label">← Previous</span><span class="adj-title">@previous.Title</span></a>
+        }
+        else
+        {
+            <span></span>
+        }
+        @if (Model.Next is { } next)
+        {
+            <a class="adj next" href="@next.Url" rel="next"><span class="label">Next →</span><span class="adj-title">@next.Title</span></a>
+        }
+    </nav>
+</article>
+<script defer src="@Assets.Url("/assets/js/site/copy-code.js")"></script>
+<script defer src="@Assets.Url("/assets/js/site/lightbox.js")"></script>

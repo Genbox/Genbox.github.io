@@ -1,0 +1,14 @@
+{
+  "images/404/*.webp": {
+    "width": 960,
+    "height": 960
+  },
+  "images/heroes/spock.webp": {
+    "width": 320,
+    "height": 384
+  },
+  "images/heroes/doomguy-idle.webp": {
+    "width": 640,
+    "height": 768
+  }
+}

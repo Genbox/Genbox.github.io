@@ -1,0 +1,4 @@
+/* Keep the Terminator HUD above the content. */
+.terminator-hud {
+    z-index: 900;
+}

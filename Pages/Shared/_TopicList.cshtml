@@ -1,0 +1,7 @@
+@model string
+<ul class="topic-list">
+    @foreach (Topic topic in Site.Topics.OrderByDescending(topic => topic.Count).Where(topic => topic.Name != Model))
+    {
+        <li><a href="@topic.Url"><span>@topic.Name</span><span class="mono">@topic.Count</span></a></li>
+    }
+</ul>

@@ -1,0 +1,105 @@
+@{
+    string title = ViewData["Title"] as string ?? SiteCatalog.Title;
+    string description = ViewData["Description"] as string ?? SiteCatalog.Description;
+    string canonicalPath = ViewData["CanonicalPath"] as string ?? Context.Request.Path.Value!.ToLowerInvariant();
+    if (!System.IO.Path.HasExtension(canonicalPath) && !canonicalPath.EndsWith('/'))
+        canonicalPath += "/";
+
+    string canonical = SiteCatalog.Origin + canonicalPath;
+    string[] styles = ViewData["Styles"] as string[] ?? [];
+    Post? post = ViewData["Post"] as Post;
+    string image = SiteCatalog.Origin + Assets.Url(post?.SocialImage ?? "/assets/social/site.png");
+
+    Dictionary<string, object?> structuredData = new Dictionary<string, object?>
+    {
+        ["@context"] = "https://schema.org",
+        ["@type"] = post is null ? "WebSite" : "BlogPosting",
+        ["name"] = title,
+        ["headline"] = title,
+        ["description"] = description,
+        ["url"] = canonical,
+        ["image"] = image,
+        ["author"] = new Dictionary<string, string>
+        {
+            ["@type"] = "Person",
+            ["name"] = SiteCatalog.Author,
+            ["url"] = SiteCatalog.AuthorUrl
+        }
+    };
+
+    if (post is not null)
+    {
+        structuredData["datePublished"] = post.Date.ToString("O");
+        structuredData["dateModified"] = (post.Modified ?? post.Date).ToString("O");
+    }
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="dark" name="color-scheme">
+    <meta content="#0D0F12" name="theme-color">
+    <title>@(title == SiteCatalog.Title ? title : title + " | " + SiteCatalog.Title)</title>
+    <meta name="description" content="@description">
+    @if (ViewData["NoIndex"] is true)
+    {
+        <meta name="robots" content="noindex">
+    }
+    <link rel="canonical" href="@canonical">
+    <meta property="og:title" content="@title">
+    <meta property="og:description" content="@description">
+    <meta property="og:url" content="@canonical">
+    <meta property="og:site_name" content="@SiteCatalog.Title">
+    <meta property="og:type" content="@(post is null ? "website" : "article")">
+    <meta property="og:image" content="@image">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    @if (post is not null)
+    {
+        <meta property="article:published_time" content="@post.Date.ToString("O")">
+        <meta property="article:modified_time" content="@((post.Modified ?? post.Date).ToString("O"))">
+    }
+    <script type="application/ld+json">@Html.Raw(JsonSerializer.Serialize(structuredData))</script>
+    <link href="/feed.xml" rel="alternate" type="application/atom+xml" title="@SiteCatalog.Title">
+    <link href="@Assets.Url("/favicon.ico")" rel="icon" sizes="32x32">
+    <link href="@Assets.Url("/favicon.svg")" rel="icon" type="image/svg+xml">
+    <link href="@Assets.Url("/apple-touch-icon.png")" rel="apple-touch-icon">
+    <link as="font" crossorigin href="@Assets.Url("/assets/fonts/Geist-Variable.woff2")" rel="preload" type="font/woff2">
+    <link as="font" crossorigin href="@Assets.Url("/assets/fonts/GeistMono-Variable.woff2")" rel="preload" type="font/woff2">
+    <link href="@Assets.Url("/assets/css/style.css")" rel="stylesheet">
+    @foreach (string style in styles)
+    {
+        <link href="@Assets.Url("/assets/css/" + style)" rel="stylesheet">
+    }
+    @if (post is not null)
+    {
+        @Html.Raw(post.Content.StylesHtml)
+    }
+    <link href="@Assets.Url("/assets/css/print.css")" rel="stylesheet" media="print">
+    <script> @Html.Raw(Assets.ThemeBootstrap)</script>
+    <script defer src="@Assets.Url("/assets/js/shared/features.js")"></script>
+    <script defer src="@Assets.Url("/assets/js/shared/runtime.js")"></script>
+    <script defer src="@Assets.Url("/assets/js/site/search.js")"></script>
+    <script defer src="@Assets.Url("/assets/js/site/footer-quote.js")"></script>
+    @if (post?.Content.HasFunctionCharts == true)
+    {
+        <script defer src="@Assets.Url("/assets/js/site/charts.js")"></script>
+    }
+    <script defer src="@Assets.Url("/assets/js/shared/modes.js")"></script>
+    <script defer src="@Assets.Url("/assets/js/shared/themes.js")"></script>
+    @if (post?.Content.HasMath == true)
+    {
+        <script defer src="https://cdn.jsdelivr.net/npm/mathjax@@4.1.3/tex-chtml.js" integrity="sha384-IgpmJyK7IVIVd18E1Ubslp9a1s6/6VBt9aJFbpzNIJPPMaxwEV7OxR/xY0hHbSck" crossorigin="anonymous"></script>
+    }
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<partial name="_Header"/>
+<main class="container" id="main" tabindex="-1">@RenderBody()</main>
+<partial name="_Footer"/>
+<script defer src="@Assets.Url("/assets/js/analytics.js")"></script>
+@await RenderSectionAsync("Scripts", false)
+</body>
+</html>

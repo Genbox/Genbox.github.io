@@ -1,0 +1,62 @@
+/* The fake crash screen shown when bsod mode starts. */
+.bsod-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+    background: #0000aa;
+    color: #ffffff;
+    font: 16px/1.5 var(--mono);
+    cursor: default;
+    transition: opacity 0.3s;
+}
+
+.bsod-screen.bsod-leaving {
+    opacity: 0;
+}
+
+.bsod-body {
+    max-width: 640px;
+}
+
+.bsod-title {
+    text-align: center;
+}
+
+.bsod-title span {
+    padding: 0 8px;
+    background: #aaaaaa;
+    color: #0000aa;
+}
+
+.bsod-prompt {
+    text-align: center;
+}
+
+.bsod-cursor {
+    animation: bsod-blink 1s step-end infinite;
+}
+
+@keyframes bsod-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bsod-cursor {
+        animation: none;
+    }
+
+    .bsod-screen {
+        transition: none;
+    }
+}
+
+@media print {
+    .bsod-screen {
+        display: none;
+    }
+}

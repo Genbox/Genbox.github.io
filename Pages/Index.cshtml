@@ -1,0 +1,82 @@
+@page "/"
+@model IndexModel
+@if (Model.Number == 1)
+{
+    <partial name="_Hero"/>
+    <section aria-label="Recent articles" class="card-grid recent">
+        @foreach (Post post in Site.Posts.Take(3))
+        {
+            <a class="card" href="@post.Url">
+                <span class="card-meta">@if (post == Site.Posts[0])
+                    {
+                        <span class="pill pill-accent">Latest</span>
+                    }
+                    <time datetime="@post.Date.ToString("O")">@post.Date.ToString("yyyy-MM-dd")</time></span>
+                <span class="card-title">@post.Title</span>
+                <span class="card-text">@post.Description</span>
+                @if (post.Tags.Length > 0)
+                {
+                    <span class="card-meta">@string.Join(" / ", post.Tags)</span>
+                }
+            </a>
+        }
+    </section>
+    <script defer src="@Assets.Url("/assets/js/site/hero.js")"></script>
+}
+<div class="with-sidebar home-body @(Model.Number > 1 ? "is-paged" : "")">
+    <section aria-labelledby="articles-title" class="post-list">
+        <div class="section-heading">
+            <h2 id="articles-title">All articles</h2>
+            <span class="mono">@Site.Posts.Count articles · page @Model.Number of @Site.PageCount</span>
+        </div>
+        <partial name="_PostList"
+                 model="Site.Posts.Skip((Model.Number - 1) * SiteCatalog.PageSize).Take(SiteCatalog.PageSize)"/>
+        @if (Site.PageCount > 1)
+        {
+            <nav aria-label="Article pages" class="pager">
+                @if (Model.Number > 1)
+                {
+                    <a class="pg" href="@SiteCatalog.PageUrl(Model.Number - 1)" rel="prev">← Newer</a>
+                }
+                else
+                {
+                    <span aria-disabled="true" class="pg is-disabled">← Newer</span>
+                }
+                <div class="pager-pages">
+                    @for (int n = 1; n <= Site.PageCount; n++)
+                    {
+                        <a aria-current="@(n == Model.Number ? "page" : null)" aria-label="Page @n" class="pg"
+                           href="@SiteCatalog.PageUrl(n)">@n</a>
+                    }
+                </div>
+                @if (Model.Number < Site.PageCount)
+                {
+                    <a class="pg" href="@SiteCatalog.PageUrl(Model.Number + 1)" rel="next">Older →</a>
+                }
+                else
+                {
+                    <span aria-disabled="true" class="pg is-disabled">Older →</span>
+                }
+            </nav>
+        }
+    </section>
+    <aside aria-label="About and topics" class="sidebar">
+        <section class="panel">
+            <h2 class="label">Topics</h2>
+            <partial name="_TopicList" model="string.Empty"/>
+        </section>
+        <section class="panel">
+            <h2 class="label">Recent projects</h2>
+            <ul class="topic-list">
+                @foreach (Repository repo in Site.RecentProjects)
+                {
+                    <li><a href="@repo.Url" rel="noopener" target="_blank"><span>@repo.Name</span>
+                            <time class="mono"
+                                  datetime="@repo.PushedAt.ToString("O")">@repo.PushedAt.ToString("yyyy-MM-dd")</time>
+                        </a></li>
+                }
+            </ul>
+            <a href="/projects/">All projects →</a>
+        </section>
+    </aside>
+</div>

@@ -1,0 +1,302 @@
+[
+  {
+    "name": "VelcroPhysics",
+    "url": "https://github.com/Genbox/VelcroPhysics",
+    "description": "High performance 2D collision detection system with realistic physics responses.",
+    "stargazerCount": 750,
+    "isArchived": false,
+    "pushedAt": "2021-08-01T16:38:16Z",
+    "language": "C#",
+    "pinned": 1
+  },
+  {
+    "name": "VirusTotalNet",
+    "url": "https://github.com/Genbox/VirusTotalNet",
+    "description": "A full implementation of the VirusTotal 2.0 API",
+    "stargazerCount": 221,
+    "isArchived": false,
+    "pushedAt": "2023-04-18T17:25:38Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "VirusTotalContextMenu",
+    "url": "https://github.com/Genbox/VirusTotalContextMenu",
+    "description": "A context menu that allows you to right click any file in Windows Explorer and scan it using VirusTotal.",
+    "stargazerCount": 135,
+    "isArchived": false,
+    "pushedAt": "2025-02-23T10:56:58Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "SimpleS3",
+    "url": "https://github.com/Genbox/SimpleS3",
+    "description": "A .NET Core implementation of Amazon's S3 API with focus on simplicity, security and performance",
+    "stargazerCount": 65,
+    "isArchived": false,
+    "pushedAt": "2026-10-11T13:07:19Z",
+    "language": "C#",
+    "pinned": 0
+  },
+  {
+    "name": "WolframAlpha",
+    "url": "https://github.com/Genbox/WolframAlpha",
+    "description": "An implementation of the Wolfram|Alpha 2.6 API in C#.",
+    "stargazerCount": 59,
+    "isArchived": false,
+    "pushedAt": "2020-06-21T22:08:54Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "Wikipedia",
+    "url": "https://github.com/Genbox/Wikipedia",
+    "description": "A C# API for searching on Wikipedia",
+    "stargazerCount": 47,
+    "isArchived": false,
+    "pushedAt": "2024-07-09T21:30:14Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "GoogleTranslateNet",
+    "url": "https://github.com/Genbox/GoogleTranslateNet",
+    "description": "A full implementation of the Google Translate 2.0 API",
+    "stargazerCount": 37,
+    "isArchived": false,
+    "pushedAt": "2023-04-14T20:40:09Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "FastHash",
+    "url": "https://github.com/Genbox/FastHash",
+    "description": null,
+    "stargazerCount": 23,
+    "isArchived": false,
+    "pushedAt": "2026-10-04T17:13:14Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "CygwinContextMenu",
+    "url": "https://github.com/Genbox/CygwinContextMenu",
+    "description": "Shift right click to open Cygwin in a folder.",
+    "stargazerCount": 19,
+    "isArchived": true,
+    "pushedAt": "2015-10-31T19:19:01Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "FastEnum",
+    "url": "https://github.com/Genbox/FastEnum",
+    "description": "A source generator to generate common methods for your enum types at compile-time.",
+    "stargazerCount": 12,
+    "isArchived": false,
+    "pushedAt": "2026-09-06T21:41:55Z",
+    "language": "C#",
+    "pinned": 2
+  },
+  {
+    "name": "GitLabSourceLink",
+    "url": "https://github.com/Genbox/GitLabSourceLink",
+    "description": "Enable source linking with self-managed GitLab repositories.",
+    "stargazerCount": 11,
+    "isArchived": false,
+    "pushedAt": "2024-03-05T15:49:23Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "ApproximationNet",
+    "url": "https://github.com/Genbox/ApproximationNet",
+    "description": "A sin(), cos() and inverse sqrt approximation library",
+    "stargazerCount": 9,
+    "isArchived": true,
+    "pushedAt": "2019-06-23T10:05:13Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "FindDupes",
+    "url": "https://github.com/Genbox/FindDupes",
+    "description": "A file duplication finder",
+    "stargazerCount": 8,
+    "isArchived": false,
+    "pushedAt": "2019-06-23T11:40:26Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "FastData",
+    "url": "https://github.com/Genbox/FastData",
+    "description": "A source generator that analyzes data and creates high-performance, read-only lookup data structures for static data.",
+    "stargazerCount": 7,
+    "isArchived": false,
+    "pushedAt": "2026-10-22T18:34:46Z",
+    "language": "C#",
+    "pinned": 3
+  },
+  {
+    "name": "HttpBuilders",
+    "url": "https://github.com/Genbox/HttpBuilders",
+    "description": "A strongly typed API for building HTTP headers",
+    "stargazerCount": 7,
+    "isArchived": false,
+    "pushedAt": "2022-12-22T19:07:06Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "Log.Net",
+    "url": "https://github.com/Genbox/Log.Net",
+    "description": "A modular logging library with support for logging to eventlog, SMTP, MSSQL, XML and more",
+    "stargazerCount": 5,
+    "isArchived": true,
+    "pushedAt": "2013-12-12T16:35:15Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "FastFilter",
+    "url": "https://github.com/Genbox/FastFilter",
+    "description": null,
+    "stargazerCount": 4,
+    "isArchived": false,
+    "pushedAt": "2026-10-12T19:14:57Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "HardenIT",
+    "url": "https://github.com/Genbox/HardenIT",
+    "description": "Website to harden modern web browsers",
+    "stargazerCount": 3,
+    "isArchived": true,
+    "pushedAt": "2017-06-18T12:36:44Z",
+    "language": "JavaScript",
+    "pinned": null
+  },
+  {
+    "name": "Validator.Net",
+    "url": "https://github.com/Genbox/Validator.Net",
+    "description": "Check for XSS and SQL injections, validate zip codes, phone numbers and more for multiple countries.",
+    "stargazerCount": 3,
+    "isArchived": true,
+    "pushedAt": "2012-09-02T21:13:28Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "SPARQL.Net",
+    "url": "https://github.com/Genbox/SPARQL.Net",
+    "description": "A simple SPARQL read-only API",
+    "stargazerCount": 3,
+    "isArchived": true,
+    "pushedAt": "2012-09-02T04:13:26Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "FastCodeSign",
+    "url": "https://github.com/Genbox/FastCodeSign",
+    "description": "A cross-platform code signing library for Windows Authenticode (Windows executables & PowerShell) and macOS code signatures",
+    "stargazerCount": 1,
+    "isArchived": false,
+    "pushedAt": "2026-08-23T17:46:08Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "FastPerfectHash",
+    "url": "https://github.com/Genbox/FastPerfectHash",
+    "description": "A (minimal) perfect hash function library that includes PtrHash, CHD and others.",
+    "stargazerCount": 1,
+    "isArchived": false,
+    "pushedAt": "2026-05-24T11:56:05Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "NovaDetect",
+    "url": "https://github.com/Genbox/NovaDetect",
+    "description": "Tests for the SuperNova web backdoor",
+    "stargazerCount": 1,
+    "isArchived": false,
+    "pushedAt": "2020-12-22T10:42:18Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "DomainAPI.Net",
+    "url": "https://github.com/Genbox/DomainAPI.Net",
+    "description": "A full implementation of the 1.0 version of DomainAPI.com in .NET",
+    "stargazerCount": 1,
+    "isArchived": true,
+    "pushedAt": "2012-09-26T19:42:41Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "Genbox.github.io",
+    "url": "https://github.com/Genbox/Genbox.github.io",
+    "description": "Whatever crossed my mind - my blog on software, performance, and security",
+    "stargazerCount": 0,
+    "isArchived": false,
+    "pushedAt": "2026-10-31T12:33:23Z",
+    "language": "HTML",
+    "pinned": null
+  },
+  {
+    "name": "gperf-archive",
+    "url": "https://github.com/Genbox/gperf-archive",
+    "description": "Contains the original source code of gperf, as well as associated papers",
+    "stargazerCount": 0,
+    "isArchived": false,
+    "pushedAt": "2025-03-19T10:42:42Z",
+    "language": "C++",
+    "pinned": null
+  },
+  {
+    "name": "SpeedTest",
+    "url": "https://github.com/Genbox/SpeedTest",
+    "description": null,
+    "stargazerCount": 0,
+    "isArchived": false,
+    "pushedAt": "2024-08-04T16:59:14Z",
+    "language": "C++",
+    "pinned": null
+  },
+  {
+    "name": "Repo-62500",
+    "url": "https://github.com/Genbox/Repo-62500",
+    "description": null,
+    "stargazerCount": 0,
+    "isArchived": false,
+    "pushedAt": "2022-07-08T15:59:00Z",
+    "language": "C#",
+    "pinned": null
+  },
+  {
+    "name": "EFValidationTemplate",
+    "url": "https://github.com/Genbox/EFValidationTemplate",
+    "description": null,
+    "stargazerCount": 0,
+    "isArchived": true,
+    "pushedAt": "2013-08-27T17:26:51Z",
+    "language": null,
+    "pinned": null
+  },
+  {
+    "name": "TrackingCounter",
+    "url": "https://github.com/Genbox/TrackingCounter",
+    "description": "A counter that keeps track of the number of times a danish citizen is tracked on the internet.",
+    "stargazerCount": 0,
+    "isArchived": true,
+    "pushedAt": "2013-02-25T03:05:09Z",
+    "language": "C#",
+    "pinned": null
+  }
+]

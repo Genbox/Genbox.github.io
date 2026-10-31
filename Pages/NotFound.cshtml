@@ -1,0 +1,28 @@
+@page "/404.html"
+@{
+    ViewData["Title"] = "Page Not Found";
+    ViewData["NoIndex"] = true;
+    ViewData["CanonicalPath"] = "/404.html";
+    ViewData["Styles"] = new[] { "not-found.css" };
+}
+<div class="not-found">
+    <div class="not-found-content">
+        <div class="terminal">
+            <p><span class="label-accent">$</span> curl -I <span class="host" id="missing-path">genbox.github.io/…</span></p>
+            <p class="status-404">HTTP/2 404</p>
+        </div>
+        <h1>This page wandered off.</h1>
+        <p class="lead">Find an article in the article list or browse by topic.</p>
+        <div class="subscribe">
+            <a class="button button-primary" href="/">All articles</a>
+            <a class="button" href="/topics/">Browse topics</a>
+        </div>
+    </div>
+    <img alt="" aria-hidden="true" class="not-found-art" height="480" hidden width="480">
+    <noscript><img alt="" class="not-found-art" height="480" src="@Assets.Url("/assets/images/404/face.webp")" width="480"></noscript>
+    <section aria-labelledby="suggestions-title" class="suggestions" hidden>
+        <h2 class="label" id="suggestions-title">Maybe you were looking for</h2>
+        <ol></ol>
+    </section>
+</div>
+<script defer src="@Assets.Url("/assets/js/site/not-found.js")"></script>

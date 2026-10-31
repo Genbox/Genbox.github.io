@@ -1,0 +1,32 @@
+[
+  {
+    "name": "C#",
+    "slug": "csharp",
+    "description": "C#, runtime behavior, libraries, and application development."
+  },
+  {
+    "name": "Algorithms",
+    "slug": "algorithms",
+    "description": "Algorithms, data structures, geometry, and numerical methods."
+  },
+  {
+    "name": "Performance",
+    "slug": "performance",
+    "description": "Optimization, benchmarking, memory use, and measuring what matters."
+  },
+  {
+    "name": "Security",
+    "slug": "security",
+    "description": "Password analysis, cryptography, secure development, and practical security."
+  },
+  {
+    "name": "Game Development",
+    "slug": "game-development",
+    "description": "Physics engines, collision detection, XNA, and building games."
+  },
+  {
+    "name": "Networking",
+    "slug": "networking",
+    "description": "Internet protocols, network services, and connected applications."
+  }
+]

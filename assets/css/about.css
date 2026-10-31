@@ -1,0 +1,45 @@
+/* About */
+.about-body {
+    padding: 40px 0 80px;
+    border-top: 1px solid var(--line-2);
+}
+
+.about-body .prose {
+    padding: 0;
+    font-size: 17px;
+}
+
+.about-body .prose > :first-child {
+    font-size: 21px;
+    line-height: 1.55;
+    color: var(--heading);
+}
+
+.about-body .prose h2,
+.about-body .prose h3 {
+    margin-top: 24px;
+    font-size: 20px;
+}
+
+.about-links {
+    gap: 10px;
+}
+
+.about-links .adj {
+    gap: 2px;
+    padding: 22px 24px;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    padding: 12px 4px 0;
+    font: 13px var(--mono);
+    color: var(--muted);
+}
+
+.stats b {
+    font-weight: 400;
+    color: var(--text);
+}

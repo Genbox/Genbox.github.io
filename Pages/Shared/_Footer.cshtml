@@ -1,0 +1,11 @@
+@{
+    long day = DateTimeOffset.UtcNow.ToUnixTimeSeconds() / 86400;
+    Quote quote = Site.Quotes[(int)(day % Site.Quotes.Count)];
+}
+<footer class="site-footer container">
+    <p>@SiteCatalog.Author <span aria-hidden="true">/</span> @SiteCatalog.Title</p>
+    <figure class="quote" data-day="@day" data-src="@Assets.Url("/assets/quotes.json")">
+        <blockquote>@quote.Text</blockquote>
+        <p class="quote-author">@(quote.Author + (string.IsNullOrEmpty(quote.Role) ? "" : ", " + quote.Role))</p>
+    </figure>
+</footer>

@@ -1,0 +1,1234 @@
+[
+  {
+    "id": "friends",
+    "title": "Friends",
+    "blogs": [
+      {
+        "name": "Michael Bisbjerg",
+        "url": "https://blog.mbwarez.dk/",
+        "description": "Projects and practical notes on programming, infrastructure, and reverse engineering.",
+        "tags": [
+          "Programming",
+          "Technology",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "Alisa Sireneva",
+        "url": "https://purplesyringa.moe/",
+        "description": "Alisa Sireneva on systems programming, performance optimization, and security.",
+        "tags": [
+          "Programming",
+          "Performance",
+          "Security"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "often-read",
+    "title": "Often read",
+    "blogs": [
+      {
+        "name": "Daniel Lemire",
+        "url": "https://lemire.me/blog/",
+        "description": "Algorithms, benchmarks, and making software faster.",
+        "tags": [
+          "Performance",
+          "Algorithms",
+          "Programming"
+        ]
+      },
+      {
+        "name": "Gérald Barré",
+        "url": "https://www.meziantou.net/",
+        "description": "Practical tips on C#, .NET, and developer tooling.",
+        "tags": [
+          "Programming",
+          "C#",
+          ".NET"
+        ]
+      },
+      {
+        "name": "Andrew Lock",
+        "url": "https://andrewlock.net/",
+        "tags": [
+          "Programming"
+        ],
+        "description": "Detailed guides to ASP.NET Core, C#, and the .NET ecosystem."
+      },
+      {
+        "name": "Kevin Gosse",
+        "url": "https://minidump.net/",
+        "tags": [
+          "Programming"
+        ],
+        "description": "Deep dives into .NET debugging, memory management, and performance."
+      },
+      {
+        "name": "Steve Gordon",
+        "url": "https://www.stevejgordon.co.uk/",
+        "tags": [
+          "Programming"
+        ],
+        "description": "Practical .NET development, performance optimization, and runtime internals."
+      }
+    ]
+  },
+  {
+    "id": "others",
+    "title": "Others",
+    "blogs": [
+      {
+        "name": "#bogner.sh",
+        "url": "https://bogner.sh",
+        "tags": [
+          "Vulnerabilities",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": ".NET Blog",
+        "url": "https://devblogs.microsoft.com/dotnet/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "/dev/random",
+        "url": "https://blog.rootshell.be/",
+        "tags": [
+          "Malware",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "<antirez>",
+        "url": "http://antirez.com",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "A Few Thoughts on Cryptographic Engineering",
+        "url": "https://blog.cryptographyengineering.com",
+        "tags": [
+          "Cryptography"
+        ]
+      },
+      {
+        "name": "AboutDFIR",
+        "url": "https://aboutdfir.com/",
+        "tags": [
+          "Forensics",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "Active Directory & Azure AD/Entra ID Security",
+        "url": "https://adsecurity.org",
+        "tags": [
+          "Identity & Access"
+        ]
+      },
+      {
+        "name": "Active Directory Security Blog",
+        "url": "https://www.active-directory-security.com/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "AI at Work Blog",
+        "url": "https://www.microsoft.com/en-us/copilot/blog/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "am0nsec",
+        "url": "https://ntamonsec.blogspot.com/",
+        "tags": [
+          "Reverse Engineering",
+          "Offensive Security"
+        ]
+      },
+      {
+        "name": "Andrea Fortuna",
+        "url": "https://www.andreafortuna.org",
+        "tags": [
+          "Forensics",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "Another Forensics Blog",
+        "url": "http://az4n6.blogspot.com/",
+        "tags": [
+          "Forensics",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "Aqua",
+        "url": "https://www.aquasec.com/",
+        "tags": [
+          "Vulnerabilities",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "AWS News Blog",
+        "url": "https://aws.amazon.com/blogs/aws/",
+        "tags": [
+          "Technology"
+        ]
+      },
+      {
+        "name": "AWS Security Blog",
+        "url": "https://aws.amazon.com/blogs/security/",
+        "tags": [
+          "Identity & Access",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "Backblaze Blog",
+        "url": "https://www.backblaze.com/blog/",
+        "tags": [
+          "Technology"
+        ]
+      },
+      {
+        "name": "bohops",
+        "url": "https://bohops.com",
+        "tags": [
+          "Offensive Security",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "Carnal0wnage Blog",
+        "url": "https://blog.carnal0wnage.com/",
+        "tags": [
+          "Offensive Security",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "Chris Farris",
+        "url": "https://www.chrisfarris.com/",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "Christophe Tafani-Dereeper",
+        "url": "https://blog.christophetd.fr/",
+        "tags": [
+          "Offensive Security",
+          "Identity & Access"
+        ]
+      },
+      {
+        "name": "Cisco Umbrella",
+        "url": "https://umbrella.cisco.com/blog",
+        "tags": [
+          "Technology"
+        ]
+      },
+      {
+        "name": "Cloudflare Blog",
+        "url": "https://blog.cloudflare.com/",
+        "tags": [
+          "Technology"
+        ]
+      },
+      {
+        "name": "Code, code and more code.",
+        "url": "http://blog.marcgravell.com/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "CodeWithStu",
+        "url": "https://codewithstu.tv/thoughts",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Coding Horror",
+        "url": "https://blog.codinghorror.com/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "CQURE Academy",
+        "url": "https://cqureacademy.com/",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "Cybergibbons",
+        "url": "https://cybergibbons.com",
+        "tags": [
+          "Reverse Engineering",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "damageboy",
+        "url": "https://bits.houmus.org/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Dan Luu",
+        "url": "https://danluu.com/",
+        "tags": [
+          "Technology"
+        ]
+      },
+      {
+        "name": "Darknet",
+        "url": "https://www.darknet.org.uk",
+        "tags": [
+          "Offensive Security"
+        ]
+      },
+      {
+        "name": "Datadog Security Labs",
+        "url": "https://securitylabs.datadoghq.com/",
+        "tags": [
+          "Vulnerabilities",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "Deepfence Blog",
+        "url": "https://www.deepfence.io",
+        "tags": [
+          "Vulnerabilities",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "Didier Stevens",
+        "url": "https://blog.didierstevens.com",
+        "tags": [
+          "Forensics",
+          "Malware"
+        ]
+      },
+      {
+        "name": "Digital Forensics Magazine Blog",
+        "url": "https://digitalforensicsmagazine.com/blogs",
+        "tags": [
+          "Forensics",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "dirkjanm.io",
+        "url": "https://dirkjanm.io/",
+        "tags": [
+          "Identity & Access",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "DSInternals",
+        "url": "https://www.dsinternals.com/en/",
+        "tags": [
+          "Identity & Access",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "Enterprise Mobility + Security",
+        "url": "https://techcommunity.microsoft.com/t5/enterprise-mobility-security/bg-p/enterprisemobilityandsecurity",
+        "tags": [
+          "Identity & Access"
+        ]
+      },
+      {
+        "name": "Errata Security",
+        "url": "https://blog.erratasec.com/",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "Evan Schwartz",
+        "url": "https://emschwartz.me/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Exploit-DB",
+        "url": "https://www.exploit-db.com",
+        "tags": [
+          "Vulnerabilities",
+          "Offensive Security"
+        ]
+      },
+      {
+        "name": "Fabulous adventures in coding",
+        "url": "https://ericlippert.com",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Finansanalyser",
+        "url": "https://www.finansanalyser.dk/",
+        "tags": [
+          "Finance"
+        ]
+      },
+      {
+        "name": "FireEye Threat Research",
+        "url": "https://www.fireeye.com/blog/threat-research.html",
+        "tags": [
+          "Malware",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "Full Disclosure",
+        "url": "https://seclists.org/#fulldisclosure",
+        "tags": [
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "Google Online Security Blog",
+        "url": "http://security.googleblog.com/",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "Hacking Exposed Computer Forensics Blog",
+        "url": "https://www.hecfblog.com/",
+        "tags": [
+          "Forensics",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "hackndo",
+        "url": "https://en.hackndo.com/",
+        "tags": [
+          "Offensive Security",
+          "Identity & Access"
+        ]
+      },
+      {
+        "name": "Hanno",
+        "url": "https://blog.hboeck.de/",
+        "tags": [
+          "Vulnerabilities",
+          "Cryptography"
+        ]
+      },
+      {
+        "name": "Harsh Varagiya",
+        "url": "https://medium.com/@harsh8v",
+        "tags": [
+          "Offensive Security",
+          "Identity & Access"
+        ]
+      },
+      {
+        "name": "Hexacorn",
+        "url": "https://www.hexacorn.com/blog",
+        "tags": [
+          "Malware",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "Huntress",
+        "url": "https://blog.huntresslabs.com",
+        "tags": [
+          "Threat Detection",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "Imperva Data Security Blog",
+        "url": "https://www.imperva.com/blog/",
+        "tags": [
+          "Web Security"
+        ]
+      },
+      {
+        "name": "Inedo Blog",
+        "url": "https://blog.inedo.com",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Irongeek",
+        "url": "http://www.irongeek.com/",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "itm4n",
+        "url": "https://itm4n.github.io/",
+        "tags": [
+          "Vulnerabilities",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "jbp.io",
+        "url": "https://jbp.io",
+        "tags": [
+          "Cryptography",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "Journal of Digital Forensics, Security and Law",
+        "url": "https://commons.erau.edu/jdfsl",
+        "tags": [
+          "Forensics"
+        ]
+      },
+      {
+        "name": "Julia Evans",
+        "url": "https://jvns.ca",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Kartikay Dubey",
+        "url": "https://dubeykartikay.com/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "KitPloit",
+        "url": "https://kitploit.com/",
+        "tags": [
+          "Offensive Security"
+        ]
+      },
+      {
+        "name": "Krebs on Security",
+        "url": "https://krebsonsecurity.com",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "leastprivilege.com",
+        "url": "https://leastprivilege.com",
+        "tags": [
+          "Identity & Access"
+        ]
+      },
+      {
+        "name": "Light Blue Touchpaper",
+        "url": "https://www.lightbluetouchpaper.org",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "mac4n6.com",
+        "url": "http://www.mac4n6.com/",
+        "tags": [
+          "Forensics"
+        ]
+      },
+      {
+        "name": "Mads Kristensen",
+        "url": "https://www.madskristensen.net/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Malwarebytes Unpacked",
+        "url": "https://www.malwarebytes.com/",
+        "tags": [
+          "Malware"
+        ]
+      },
+      {
+        "name": "MalwareTech",
+        "url": "https://malwaretech.com/",
+        "tags": [
+          "Malware",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "maoni",
+        "url": "https://devblogs.microsoft.com/dotnet/author/maoni/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Marco Lancini",
+        "url": "https://blog.marcolancini.it",
+        "tags": [
+          "Threat Detection",
+          "Security"
+        ]
+      },
+      {
+        "name": "Marek's idea of the day",
+        "url": "https://idea.popcount.org",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Mash That Key",
+        "url": "http://www.mashthatkey.com/",
+        "tags": [
+          "Forensics",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "Michal's low level corner",
+        "url": "https://migeel.sk/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Microsoft Security Baselines Blog",
+        "url": "https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Microsoft Security Response Center",
+        "url": "https://msrc.microsoft.com/blog/",
+        "tags": [
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "Mostly mangling",
+        "url": "http://mostlymangling.blogspot.com/",
+        "tags": [
+          "Algorithms"
+        ]
+      },
+      {
+        "name": "mov ax,bx",
+        "url": "https://movaxbx.ru",
+        "tags": [
+          "Reverse Engineering",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "mrd0x",
+        "url": "https://mrd0x.com",
+        "tags": [
+          "Offensive Security",
+          "Web Security"
+        ]
+      },
+      {
+        "name": "Mystic0x1",
+        "url": "https://mystic0x1.github.io/",
+        "tags": [
+          "Offensive Security",
+          "Identity & Access"
+        ]
+      },
+      {
+        "name": "Naked Security",
+        "url": "https://nakedsecurity.sophos.com",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "Netflix TechBlog",
+        "url": "https://netflixtechblog.com",
+        "tags": [
+          "Technology"
+        ]
+      },
+      {
+        "name": "Nick Craver",
+        "url": "https://nickcraver.com/blog",
+        "tags": [
+          "Programming",
+          "Performance"
+        ]
+      },
+      {
+        "name": "Nick Frichette",
+        "url": "https://frichetten.com/blog/",
+        "tags": [
+          "Vulnerabilities",
+          "Offensive Security"
+        ]
+      },
+      {
+        "name": "NirBlog",
+        "url": "https://blog.nirsoft.net",
+        "tags": [
+          "Technology"
+        ]
+      },
+      {
+        "name": "Nockawa",
+        "url": "https://nockawa.github.io/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "null program",
+        "url": "https://nullprogram.com",
+        "tags": [
+          "Technology"
+        ]
+      },
+      {
+        "name": "Office of Inadequate Security",
+        "url": "https://databreaches.net",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "Oleg Karasik",
+        "url": "https://olegkarasik.wordpress.com",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Orange Cyberdefense",
+        "url": "https://sensepost.com/",
+        "tags": [
+          "Offensive Security",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "Orca Security",
+        "url": "https://orca.security/",
+        "tags": [
+          "Vulnerabilities",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "Performance is a Feature!",
+        "url": "http://www.mattwarren.org/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Performance Matters",
+        "url": "https://travisdowns.github.io/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "PortSwigger Blog",
+        "url": "https://portswigger.net/blog",
+        "tags": [
+          "Web Security",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "Positive Technologies",
+        "url": "http://blog.ptsecurity.com/",
+        "tags": [
+          "Malware",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "Probably Dance",
+        "url": "https://probablydance.com",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Project Zero",
+        "url": "https://projectzero.google/",
+        "tags": [
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "Quarkslab",
+        "url": "http://blog.quarkslab.com/",
+        "tags": [
+          "Vulnerabilities",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "r/crypto",
+        "url": "https://www.reddit.com/r/crypto/",
+        "tags": [
+          "Cryptography"
+        ]
+      },
+      {
+        "name": "r/encryption",
+        "url": "https://www.reddit.com/r/encryption/",
+        "tags": [
+          "Cryptography"
+        ]
+      },
+      {
+        "name": "r/fulldisclosure",
+        "url": "https://www.reddit.com/r/fulldisclosure/",
+        "tags": [
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "r/Malware",
+        "url": "https://www.reddit.com/r/Malware/",
+        "tags": [
+          "Malware",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "r/netsec",
+        "url": "https://www.reddit.com/r/netsec/",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "r/physec",
+        "url": "https://www.reddit.com/r/physec/",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "r/pwned",
+        "url": "https://www.reddit.com/r/pwned/",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "r/WindowsSecurity",
+        "url": "https://www.reddit.com/r/WindowsSecurity/",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "REDTEAM.PL",
+        "url": "https://blog.redteam.pl/",
+        "tags": [
+          "Vulnerabilities",
+          "Offensive Security"
+        ]
+      },
+      {
+        "name": "Reverse Engineering",
+        "url": "https://reverse.put.as/",
+        "tags": [
+          "Reverse Engineering",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "Rhino Security Labs",
+        "url": "https://rhinosecuritylabs.com/",
+        "tags": [
+          "Offensive Security",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "Room362",
+        "url": "https://malicious.link/posts/",
+        "tags": [
+          "Offensive Security",
+          "Identity & Access"
+        ]
+      },
+      {
+        "name": "SANS Blog",
+        "url": "https://www.sans.org/blog",
+        "tags": [
+          "Forensics",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "SANS Internet Storm Center",
+        "url": "https://isc.sans.edu",
+        "tags": [
+          "Malware",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "Schneier on Security",
+        "url": "https://www.schneier.com/",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "Scott Brady",
+        "url": "https://www.scottbrady.io",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Scott Hanselman",
+        "url": "https://www.hanselman.com/blog/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Scott Helme",
+        "url": "https://scotthelme.co.uk/",
+        "tags": [
+          "Web Security",
+          "Cryptography"
+        ]
+      },
+      {
+        "name": "Scott Logic",
+        "url": "https://blog.scottlogic.com",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Secure coding and more",
+        "url": "http://antonioparata.blogspot.com/",
+        "tags": [
+          "Malware",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "Securifera",
+        "url": "https://www.securifera.com",
+        "tags": [
+          "Offensive Security",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "Shell is Only the Beginning",
+        "url": "https://www.darkoperator.com/",
+        "tags": [
+          "Identity & Access",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "Simon PG Edwards",
+        "url": "https://www.spgedwards.com/",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "SkullSecurity Blog",
+        "url": "https://www.skullsecurity.org/",
+        "tags": [
+          "Offensive Security",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "Stephen Cleary",
+        "url": "https://blog.stephencleary.com/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Steve Hanov",
+        "url": "https://stevehanov.ca/blog/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Sucuri Blog",
+        "url": "https://blog.sucuri.net/",
+        "tags": [
+          "Web Security",
+          "Malware"
+        ]
+      },
+      {
+        "name": "Sysdig Blog",
+        "url": "https://sysdig.com/blog/",
+        "tags": [
+          "Threat Detection",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "TaoSecurity Blog",
+        "url": "https://taosecurity.blogspot.com/",
+        "tags": [
+          "Threat Detection",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "TeamsSix",
+        "url": "https://www.teamssix.com/",
+        "tags": [
+          "Offensive Security",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "The Coalfire Blog",
+        "url": "https://coalfire.com/the-coalfire-blog?rss=blogs",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "The Old New Thing",
+        "url": "https://devblogs.microsoft.com/oldnewthing/",
+        "tags": [
+          "Technology"
+        ]
+      },
+      {
+        "name": "The Paramount Defenses Blog",
+        "url": "https://blog.paramountdefenses.com/",
+        "tags": [
+          "Identity & Access"
+        ]
+      },
+      {
+        "name": "The Reformed Programmer",
+        "url": "https://www.thereformedprogrammer.net",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "The Trail of Bits Blog",
+        "url": "https://blog.trailofbits.com/",
+        "tags": [
+          "Vulnerabilities",
+          "Cryptography"
+        ]
+      },
+      {
+        "name": "Thinktecture AG",
+        "url": "https://www.thinktecture.com/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "This Week In 4n6",
+        "url": "https://thisweekin4n6.com",
+        "tags": [
+          "Forensics",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "Threatpost",
+        "url": "https://threatpost.com",
+        "tags": [
+          "Security"
+        ]
+      },
+      {
+        "name": "Tom Alrich",
+        "url": "https://tomalrich.substack.com",
+        "tags": [
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "ToolsWatch",
+        "url": "https://toolswatch.org",
+        "tags": [
+          "Offensive Security",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "Travis Illig",
+        "url": "https://www.paraesthesia.com/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Troy Hunt",
+        "url": "https://www.troyhunt.com/",
+        "tags": [
+          "Web Security",
+          "Security"
+        ]
+      },
+      {
+        "name": "TrustedSec",
+        "url": "https://trustedsec.com/",
+        "tags": [
+          "Offensive Security",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "trustedsignal",
+        "url": "https://trustedsignal.blogspot.com/",
+        "tags": [
+          "Forensics"
+        ]
+      },
+      {
+        "name": "Tyranid's Lair",
+        "url": "https://www.tiraniddo.dev/",
+        "tags": [
+          "Vulnerabilities",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "Unit 42",
+        "url": "https://unit42.paloaltonetworks.com/",
+        "tags": [
+          "Malware",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "V3ded",
+        "url": "https://v3ded.github.io/",
+        "tags": [
+          "Offensive Security",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "VirusTotal Blog",
+        "url": "https://blog.virustotal.com/",
+        "tags": [
+          "Malware",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "Visual Studio Blog",
+        "url": "https://devblogs.microsoft.com/visualstudio/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Windows Command Line",
+        "url": "https://devblogs.microsoft.com/commandline/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "Windows Incident Response",
+        "url": "http://windowsir.blogspot.com/",
+        "tags": [
+          "Forensics",
+          "Incident Response"
+        ]
+      },
+      {
+        "name": "Wiz Blog",
+        "url": "https://www.wiz.io",
+        "tags": [
+          "Vulnerabilities",
+          "Threat Detection"
+        ]
+      },
+      {
+        "name": "xorl %eax, %eax",
+        "url": "https://xorl.wordpress.com",
+        "tags": [
+          "Malware",
+          "Vulnerabilities"
+        ]
+      },
+      {
+        "name": "XPN Infosec Blog",
+        "url": "https://blog.xpnsec.com/",
+        "tags": [
+          "Offensive Security",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "Yogesh Khatri",
+        "url": "http://www.swiftforensics.com/",
+        "tags": [
+          "Forensics"
+        ]
+      },
+      {
+        "name": "You’ve Been Haacked",
+        "url": "https://haacked.com/",
+        "tags": [
+          "Programming"
+        ]
+      },
+      {
+        "name": "zc00l",
+        "url": "https://0x00-0x00.github.io/",
+        "tags": [
+          "Offensive Security",
+          "Reverse Engineering"
+        ]
+      },
+      {
+        "name": "zeifan",
+        "url": "https://zeifan.my/",
+        "tags": [
+          "Vulnerabilities",
+          "Reverse Engineering"
+        ]
+      }
+    ]
+  }
+]

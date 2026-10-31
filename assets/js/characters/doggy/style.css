@@ -1,0 +1,33 @@
+/* Mike stays above the page without intercepting links or text selection. */
+.cavalier {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 96px;
+    height: 80px;
+    z-index: 1000;
+    pointer-events: none;
+    image-rendering: pixelated;
+}
+
+@media print {
+    .cavalier {
+        display: none;
+    }
+}
+
+html.mike-active,
+html.mike-active * {
+    cursor:
+        url("../../../images/characters/bone-cursor.svg") 16 16,
+        auto;
+}
+
+/* Dust and hearts for the dog, just under the dog itself. */
+.doggy-effects {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    image-rendering: pixelated;
+}

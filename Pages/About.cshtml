@@ -1,0 +1,27 @@
+@page "/about/"
+@{
+    ViewData["Title"] = "About";
+    ViewData["Styles"] = new[] { "about.css", "article.css" };
+}
+<header class="page-header"><p class="label label-accent">// behind the articles</p>
+    <h1>About this blog</h1></header>
+<div class="with-sidebar about-body">
+    <div class="prose">
+        <p>I'm Ian Qvist. Here is where I write about software engineering, data structures, algorithms, performance and
+            security.</p>
+        <p>I have been writing here since 2009.</p>
+        <p>Find my projects on <a href="https://github.com/Genbox" target="_blank" rel="noopener">GitHub</a>, browse the
+            <a href="/topics/">topics</a>, or subscribe to the <a href="/feed.xml" target="_blank" rel="noopener">RSS
+                feed</a>.</p>
+        <h3>Privacy</h3>
+        <p>This site uses Cloudflare Web Analytics to understand aggregate traffic, popular articles and referrals.</p>
+    </div>
+    <aside aria-label="Elsewhere" class="sidebar about-links">
+        <a class="adj" href="/projects/"><span class="mono">github.com/Genbox</span><span class="adj-title">My projects →</span></a>
+        <a class="adj" href="/feed.xml" rel="noopener" target="_blank"><span class="mono">/feed.xml</span><span
+                class="adj-title">Subscribe via RSS ↗</span></a>
+        <p class="stats">
+            <span><b>@Site.Posts.Count</b> articles</span><span><b>@Site.ProjectCount</b> projects</span><span>since <b>@(Site.Posts.LastOrDefault()?.Date.Year)</b></span>
+        </p>
+    </aside>
+</div>

@@ -1,0 +1,53 @@
+@model SeriesNavigation
+@{
+    ArticleSeries series = Model.Series;
+    int index = Array.IndexOf(series.Parts, Model.Post.Url);
+}
+<nav aria-label="@((Model.Compact ? "Continue " : "") + series.Title + " series")" class="series">
+    <div class="series-head">
+        <span>
+            <span class="label">Series</span><span class="series-title">@series.Title</span>
+            <span class="mono series-count">@(index >= 0 ? $"Part {index + 1} of {series.Parts.Length}" : $"{series.Parts.Length} parts")</span>
+        </span>
+        @if (series.OverviewPost is { } overview && overview != Model.Post)
+        {
+            <a href="@overview.Url">Series overview →</a>
+        }
+    </div>
+    @if (!Model.Compact)
+    {
+        <ol>
+            @for (int n = 0; n < series.Parts.Length; n++)
+            {
+                Post? article = series.Articles[n];
+                if (article is null)
+                {
+                    continue;
+                }
+                <li>
+                    @if (article == Model.Post)
+                    {
+                        <span aria-current="page" class="part"><span class="part-n">@(n + 1)</span>@article.Title</span>
+                    }
+                    else
+                    {
+                        <a class="part" href="@article.Url"><span class="part-n">@(n + 1)</span>@article.Title</a>
+                    }
+                </li>
+            }
+        </ol>
+    }
+    @if (index >= 0)
+    {
+        <div class="series-steps">
+            @if (index > 0 && series.Articles[index - 1] is { } previous)
+            {
+                <a href="@previous.Url">← Part @index</a>
+            }
+            @if (index + 1 < series.Parts.Length && series.Articles[index + 1] is { } next)
+            {
+                <a href="@next.Url">Part @(index + 2) →</a>
+            }
+        </div>
+    }
+</nav>

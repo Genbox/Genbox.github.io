@@ -1,0 +1,19 @@
+/* Opt-in diagram primitives. Load before component and post-local styles. */
+.prose .diagram-panel {
+    margin: 24px 0;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+}
+
+.diagram figcaption {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.diagram svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}

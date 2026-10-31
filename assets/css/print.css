@@ -1,0 +1,125 @@
+/* Print: black on white, article only */
+@media print {
+    :root {
+        color-scheme: light;
+    }
+
+    body {
+        background: #fff;
+        color: #000;
+        font-size: 11pt;
+    }
+
+    .container {
+        max-width: none;
+        padding: 0;
+    }
+
+    .site-header,
+    .site-footer,
+    .skip,
+    .back-link,
+    .toc,
+    .series,
+    .more,
+    .post-nav,
+    .copy,
+    .hash,
+    .sidebar,
+    .pager,
+    .search-dialog,
+    .lightbox,
+    .mode-layer,
+    .chiptune-visualizer {
+        display: none !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .prose,
+    .prose strong,
+    .prose em,
+    .article-meta,
+    .updated {
+        color: #000 !important;
+    }
+
+    .article {
+        max-width: none;
+    }
+
+    .article-header {
+        padding-top: 0;
+    }
+
+    .pill {
+        border-color: #999;
+        background: none;
+        color: #000;
+    }
+
+    .prose {
+        font-size: 11pt;
+    }
+
+    .prose a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .prose a[href^="http"]:not(:has(img))::after {
+        content: " (" attr(href) ")";
+        font-size: 0.85em;
+        word-break: break-all;
+        color: #444;
+    }
+
+    .prose .num,
+    .label {
+        color: #444 !important;
+    }
+
+    .code,
+    .prose > pre,
+    .prose table,
+    .prose blockquote {
+        background: #fff !important;
+        border-color: #bbb !important;
+        break-inside: avoid;
+    }
+
+    .code-bar {
+        border-color: #bbb;
+        color: #444;
+    }
+
+    .code pre,
+    .prose pre,
+    .highlight * {
+        color: #000 !important;
+        white-space: pre-wrap;
+    }
+
+    .prose th {
+        background: #eee;
+        color: #000;
+    }
+
+    :not(pre) > code {
+        background: #f2f2f2;
+        border-color: #ccc;
+        color: #000;
+    }
+
+    .prose img,
+    figure {
+        break-inside: avoid;
+    }
+
+    .prose h2,
+    .prose h3 {
+        break-after: avoid;
+    }
+}

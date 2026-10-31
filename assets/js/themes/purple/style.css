@@ -1,0 +1,73 @@
+/* Purple easter egg: dark palette from https://purplesyringa.moe/all.css. */
+:root.theme-purple {
+    --bg: #160117;
+    --surface: #361c39;
+    --surface-2: #4e2554;
+    --code-bg: #241027;
+    --heading: #fee8ff;
+    --text: #fee8ff;
+    --body: #ecd3ef;
+    --sub: #dcb6df;
+    --muted: #cd91ed;
+    --faint: #cd91ed;
+    --accent: #f765b4;
+    --line: #9c2254;
+    --line-2: #64315c;
+    --line-3: #361c39;
+    --hover-line: #d0438f;
+    scrollbar-color: #d0438f #f765b420;
+}
+
+.theme-purple .wordmark-icon,
+.theme-purple .prose tbody tr:hover,
+.theme-purple .chip:hover {
+    background: var(--surface);
+}
+
+.theme-purple :not(pre) > code {
+    background: var(--surface);
+    border-color: var(--line-2);
+    color: #cd91ed;
+}
+
+.theme-purple .code-bar {
+    border-color: var(--line-2);
+}
+
+.theme-purple .site-nav a,
+.theme-purple .site-footer a {
+    color: var(--sub);
+}
+
+.theme-purple .site-nav a:hover,
+.theme-purple .site-footer a:hover,
+.theme-purple .site-nav a[aria-current] {
+    color: var(--accent);
+}
+
+.theme-purple .button-primary:hover {
+    background: #ed79a9;
+}
+
+.theme-purple .prose a {
+    text-decoration-color: #9c2254;
+}
+
+.theme-purple mark {
+    background: var(--surface-2);
+}
+
+/* The accent pink is a shade too dark on the pills' purple; this lighter pink reads at 4.7:1. */
+.theme-purple .pill {
+    color: #f872bb;
+}
+
+.theme-purple .chart {
+    --series-0: #cd91ed;
+    --series-1: #f765b4;
+    --rest: #9c2254;
+}
+
+.theme-purple .chart-grid {
+    stroke: var(--line-2);
+}

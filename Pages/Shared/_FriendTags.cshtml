@@ -1,0 +1,10 @@
+@model IEnumerable<string>
+@if (Model.Any())
+{
+    <ul aria-label="Subjects" class="tags">
+        @foreach (string tag in Model)
+        {
+            <li><span class="pill">@tag</span></li>
+        }
+    </ul>
+}

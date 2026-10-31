@@ -1,0 +1,417 @@
+/* Type kawaii for a pastel palette and a few floating friends. */
+:root.theme-kawaii {
+    --bg: #fff5fa;
+    --surface: #fffafd;
+    --surface-2: #f4e8fa;
+    --heading: #66345e;
+    --text: #573e58;
+    --body: #614961;
+    --sub: #765574;
+    --muted: #805d7c;
+    --faint: #805d7c;
+    --accent: #a52b70;
+    --line: #e8cce0;
+    --line-2: #efdaea;
+    --line-3: #f4e6ef;
+    --hover-line: #bf79a7;
+    color-scheme: light;
+    scrollbar-color: #d49cbe #fff5fa;
+}
+
+.theme-kawaii body {
+    isolation: isolate;
+    background: radial-gradient(ellipse at 0 0, #ffe0ed80, transparent 55%), radial-gradient(ellipse at 100% 30%, #e4dcff80, transparent 50%), var(--bg);
+}
+
+.theme-kawaii a:hover,
+.theme-kawaii .site-nav a[aria-current] {
+    color: #81215a;
+}
+.theme-kawaii .site-nav a,
+.theme-kawaii .site-footer a {
+    color: var(--sub);
+}
+.theme-kawaii .site-nav a:hover,
+.theme-kawaii .site-footer a:hover {
+    color: var(--accent);
+}
+.theme-kawaii ::selection {
+    background: #f6c8e1;
+    color: #573e58;
+}
+
+.theme-kawaii .card,
+.theme-kawaii .panel,
+.theme-kawaii .toc,
+.theme-kawaii .series,
+.theme-kawaii .adj,
+.theme-kawaii .search-field {
+    border-radius: 22px;
+    box-shadow: 0 5px 18px #ad6a9b0b;
+}
+
+.theme-kawaii .button,
+.theme-kawaii .chip,
+.theme-kawaii .pg {
+    border-radius: 999px;
+    transition:
+        transform 180ms ease,
+        background 180ms ease;
+}
+.theme-kawaii .button:hover,
+.theme-kawaii .chip:hover {
+    transform: translateY(-3px) rotate(-2deg);
+}
+.theme-kawaii .button-primary {
+    background: #f4c5df;
+    color: #66345e;
+}
+.theme-kawaii .button-primary:hover {
+    background: #edafd2;
+    color: #66345e;
+}
+.theme-kawaii .chip:hover,
+.theme-kawaii .prose tbody tr:hover {
+    background: #f7e6f2;
+}
+.theme-kawaii .wordmark-icon {
+    background: #f5d3e7;
+    color: #81215a;
+    border-radius: 14px;
+}
+.theme-kawaii .wordmark-icon::after {
+    content: "♡";
+    font-size: 13px;
+    margin-left: 3px;
+}
+.theme-kawaii :not(pre) > code {
+    background: #f4e8fa;
+    border-color: var(--line);
+    color: #793e81;
+}
+.theme-kawaii .prose a {
+    text-decoration-color: #ca8bb4;
+}
+.theme-kawaii mark {
+    background: #ffe8ac;
+    color: #66345e;
+}
+.theme-kawaii .chart {
+    --series-0: #9950a1;
+    --series-1: #b8397e;
+    --rest: #ad94b5;
+}
+.theme-kawaii .chart-grid {
+    stroke: var(--line);
+}
+/* Keep the existing syntax colors on their dark code surfaces. */
+.theme-kawaii .code,
+.theme-kawaii .prose > pre,
+.theme-kawaii .terminal {
+    color: #e7e9ec;
+}
+
+.kawaii-friends {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+.kawaii-friends span {
+    position: absolute;
+    font-size: 25px;
+    opacity: 0.25;
+    animation: kawaii-float 6s ease-in-out infinite;
+    animation-delay: calc(var(--friend) * -0.9s);
+}
+@keyframes kawaii-float {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+}
+@media (max-width: 700px) {
+    .kawaii-friends span {
+        font-size: 20px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .kawaii-friends span {
+        animation: none;
+    }
+    .theme-kawaii .button,
+    .theme-kawaii .chip,
+    .theme-kawaii .pg {
+        transition: none;
+    }
+    .theme-kawaii .button:hover,
+    .theme-kawaii .chip:hover {
+        transform: none;
+    }
+}
+@media print {
+    .kawaii-friends {
+        display: none;
+    }
+}
+
+.kawaii-rabbit {
+    position: fixed;
+    left: 0;
+    bottom: 5px;
+    width: 82px;
+    height: 60px;
+    z-index: 3;
+    pointer-events: none;
+}
+.kawaii-rabbit svg {
+    overflow: visible;
+}
+.rabbit-body,
+.rabbit-hindleg,
+.rabbit-foreleg,
+.rabbit-ears,
+.rabbit-shadow {
+    animation-duration: 720ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    animation-delay: var(--rabbit-frame, 0ms);
+}
+.rabbit-body {
+    animation-name: rabbit-bound;
+    transform-origin: 35px 44px;
+}
+.rabbit-hindleg {
+    animation-name: rabbit-kick;
+    transform-origin: 28px 39px;
+}
+.rabbit-foreleg {
+    animation-name: rabbit-reach;
+    transform-origin: 47px 37px;
+}
+.rabbit-far {
+    opacity: 0.75;
+}
+.rabbit-ears {
+    animation-name: rabbit-ear-lag;
+    transform-origin: 51px 26px;
+}
+.rabbit-shadow {
+    animation-name: rabbit-ground;
+    transform-origin: 35px 56px;
+}
+.rabbit-carrot {
+    display: none;
+}
+.kawaii-rabbit.is-eating .rabbit-carrot {
+    display: inline;
+    animation: carrot-nibble 350ms steps(2, end) infinite;
+}
+.kawaii-rabbit.is-eating .rabbit-body,
+.kawaii-rabbit.is-eating .rabbit-hindleg,
+.kawaii-rabbit.is-eating .rabbit-foreleg,
+.kawaii-rabbit.is-eating .rabbit-ears,
+.kawaii-rabbit.is-eating .rabbit-shadow {
+    animation: none;
+}
+.kawaii-rabbit.is-eating .rabbit-head {
+    animation: rabbit-nibble 350ms ease-in-out infinite;
+    transform-origin: 50px 35px;
+}
+@keyframes rabbit-bound {
+    0%,
+    100% {
+        transform: translateY(0) scale(1.03, 0.94);
+    }
+    18% {
+        transform: translateY(-2px) rotate(-8deg) scale(1.06, 0.95);
+    }
+    42% {
+        transform: translateY(-11px) rotate(-3deg) scale(1.12, 0.93);
+    }
+    62% {
+        transform: translateY(-8px) rotate(7deg);
+    }
+    80% {
+        transform: translateY(-1px) rotate(5deg) scale(0.97, 1.02);
+    }
+    90% {
+        transform: translateY(1px) scale(1.03, 0.91);
+    }
+}
+@keyframes rabbit-kick {
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+    24% {
+        transform: rotate(48deg) translateX(-3px);
+    }
+    48% {
+        transform: rotate(32deg);
+    }
+    72% {
+        transform: rotate(-25deg) translateX(4px);
+    }
+    90% {
+        transform: rotate(-12deg);
+    }
+}
+@keyframes rabbit-reach {
+    0%,
+    100% {
+        transform: rotate(-12deg);
+    }
+    24% {
+        transform: rotate(38deg);
+    }
+    46% {
+        transform: rotate(55deg) scaleY(0.8);
+    }
+    68% {
+        transform: rotate(-28deg);
+    }
+    82% {
+        transform: rotate(-18deg);
+    }
+}
+@keyframes rabbit-ear-lag {
+    0%,
+    100% {
+        transform: rotate(-5deg);
+    }
+    30% {
+        transform: rotate(-24deg);
+    }
+    65% {
+        transform: rotate(9deg);
+    }
+    88% {
+        transform: rotate(-9deg);
+    }
+}
+@keyframes rabbit-ground {
+    0%,
+    100% {
+        transform: scaleX(1);
+        opacity: 0.2;
+    }
+    45% {
+        transform: scaleX(0.7);
+        opacity: 0.1;
+    }
+}
+@keyframes rabbit-nibble {
+    0%,
+    100% {
+        transform: rotate(8deg) translateY(3px);
+    }
+    50% {
+        transform: rotate(13deg) translateY(4px);
+    }
+}
+@keyframes carrot-nibble {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-2px);
+    }
+}
+.kawaii-rabbit.is-sitting .rabbit-body {
+    transform-origin: 29px 55px;
+    animation: none;
+    transform: scale(0.87, 1.04);
+}
+.kawaii-rabbit.is-sitting .rabbit-hindleg,
+.kawaii-rabbit.is-sitting .rabbit-foreleg,
+.kawaii-rabbit.is-sitting .rabbit-shadow {
+    animation: none;
+}
+.kawaii-rabbit.is-sitting .rabbit-foreleg {
+    transform: translate(-4px, 0) rotate(8deg);
+}
+.kawaii-rabbit.is-sitting .rabbit-head {
+    transform-origin: 48px 39px;
+    animation: rabbit-sit-look 6000ms ease-in-out infinite;
+}
+.kawaii-rabbit.is-sitting .rabbit-ears {
+    animation: rabbit-sit-ears 3800ms ease-in-out infinite;
+}
+.kawaii-rabbit.is-sitting .rabbit-mouth {
+    animation: rabbit-nose-twitch 2200ms ease-in-out infinite;
+}
+/* Only the head moves during idle; the body, paws, and screen position stay planted. */
+@keyframes rabbit-sit-look {
+    0%,
+    20%,
+    100% {
+        transform: translate(-5px, -3px) rotate(-6deg);
+    }
+    35%,
+    45% {
+        transform: translate(-5px, -3px) rotate(-15deg);
+    }
+    65%,
+    80% {
+        transform: translate(-4px, 3px) rotate(15deg);
+    }
+}
+@keyframes rabbit-sit-ears {
+    0%,
+    45%,
+    75%,
+    100% {
+        transform: rotate(-4deg);
+    }
+    52%,
+    66% {
+        transform: rotate(9deg);
+    }
+    59% {
+        transform: rotate(0);
+    }
+}
+@keyframes rabbit-nose-twitch {
+    0%,
+    65%,
+    85%,
+    100% {
+        transform: translateY(0);
+    }
+    70%,
+    80% {
+        transform: translateY(-0.8px);
+    }
+}
+.rabbit-eye {
+    transform-origin: 57px 32px;
+    animation: rabbit-blink 5200ms ease-in-out infinite;
+}
+@keyframes rabbit-blink {
+    0%,
+    90%,
+    96%,
+    100% {
+        transform: scaleY(1);
+    }
+    93% {
+        transform: scaleY(0.1);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .kawaii-rabbit * {
+        animation: none !important;
+    }
+}
+@media print {
+    .kawaii-rabbit {
+        display: none;
+    }
+}
